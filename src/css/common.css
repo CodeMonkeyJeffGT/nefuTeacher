@@ -1,0 +1,8 @@
+html,body{
+	margin: 0;
+}
+body{
+	background-image: url('../img/bc.png');
+	background-size: cover;
+	background-color: #b8e5f8;
+}
