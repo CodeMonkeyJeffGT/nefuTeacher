@@ -32,10 +32,10 @@
 			font-size: 16px;
 		}
 		.login-area{
-			margin-top: 24px;
+			margin-top: 18px;
 		}
 		.login-input{
-			margin: 22px 80px;
+			margin: 18px 80px;
 			width: 240px;
 			border: none;
 			font-size: 15px;
@@ -51,19 +51,30 @@
 			margin: 20px;
 			width: 240px;
 			display: inline-block;
-		    padding: 0 16px;
-		    font-size: 14px;
-		    line-height: 32px;
-		    text-align: center;
-		    cursor: pointer;
-		    border: 1px solid;
-		    border-radius: 3px;
+		    	padding: 0 16px;
+		    	font-size: 14px;
+		    	line-height: 32px;
+		    	text-align: center;
+		    	cursor: pointer;
+		    	border: 1px solid;
+		    	border-radius: 3px;
 		}
 		.login-btn:focus{
 			outline: none;
 		}
 		.login-btn:hover{
 			background-color: #0074ff;
+		}
+		.login-warning{
+			font-size: 13px;
+			color: red;
+			text-align: left;
+			margin-left: 80px;
+			height: 10px;
+		}
+		.login-reminder{
+			font-size: 13px;
+			color: gray;
 		}
 	</style>
 </head>
@@ -74,7 +85,9 @@
 		<form class="login-area" onsubmit="return false;">
 			<input class="login-input" type="text" placeholder="账号" name="账号"/>
 			<input class="login-input" type="password" placeholder="密码" name="密码"/>
+			<div class="login-warning">请输入账号、密码</div>
 			<input class="login-btn" type="submit" value="登录">
+			<div class="login-reminder">请使用教务处账号密码登录</div>
 		</form>
 	</div></td></tr></table>
 	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
