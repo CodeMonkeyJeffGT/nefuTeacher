@@ -17,7 +17,7 @@ if($class == 'V')
 
 session_start();
 //如果 未登录 且 不是登录操作 且 不是自身异步调用
-if(empty($_SESSION['nefuteacher']) && ($class != 'User' || $function != 'login') && $function != 'operate_auto')
+if(empty($_SESSION['teacher']) && ($class != 'User' || $function != 'login') && $function != 'operate_auto')
 {
 	if(empty($_POST))
 	{
