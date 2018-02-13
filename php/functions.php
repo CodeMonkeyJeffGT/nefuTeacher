@@ -16,3 +16,8 @@ function view($file = '')
 	echo '<link rel="stylesheet" type="text/css" href="src/css/common.css">';
 	include(ROOT . '/view/' . $file . '.php');
 }
+
+function verdor($file = '')
+{
+	include(ROOT . '/php/vendor/' . $file . '.php');
+}

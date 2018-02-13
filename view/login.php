@@ -70,11 +70,16 @@
 			color: red;
 			text-align: left;
 			margin-left: 80px;
-			height: 10px;
+			height: 0px;
 		}
 		.login-reminder{
+			margin-top: 10px;
 			font-size: 13px;
 			color: gray;
+		}
+		.login-claim{
+			color: #0074ff;
+			cursor: pointer;
 		}
 	</style>
 </head>
@@ -83,11 +88,11 @@
 		<div class="login-title">知 派</div>
 		<div class="login-label">教&nbsp;&nbsp;&nbsp;&nbsp;师&nbsp;&nbsp;&nbsp;&nbsp;端</div>
 		<form class="login-area" onsubmit="return false;">
-			<input class="login-input" type="text" placeholder="账号" name="账号"/>
+			<input class="login-input" type="text" placeholder="账号" name="账号" autofocus/>
 			<input class="login-input" type="password" placeholder="密码" name="密码"/>
-			<div class="login-warning">请输入账号、密码</div>
+			<div class="login-warning"></div>
 			<input class="login-btn" type="submit" value="登录">
-			<div class="login-reminder">请使用教务处账号密码登录</div>
+			<div class="login-reminder">请使用教务处账号密码登录<br><span class="login-claim">安全声明</style></div>
 		</form>
 	</div></td></tr></table>
 	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
@@ -97,8 +102,42 @@
 			$(".login-btn").on('click', function(){
 				var account = $(".login-input[name='账号']").val();
 				var password = $(".login-input[name='密码'").val();
-				password = $.md5(password);
-				console.log([account, password]);
+				if(account == ''){
+					$(".login-warning").text('请输入账号');
+					return;
+				}
+				if(password == ''){
+					$(".login-warning").text('请输入密码');
+					return;
+				}
+				password = $.md5(password).toUpperCase();
+				var data = {
+					"account": account,
+					"password": password
+				};
+				$(".login-warning").text('登录中...');
+				$(".login-warning").css('color', 'gray');
+				$.ajax({
+					"url": '?c=user&f=login',
+					"method": 'post',
+					"data": data,
+					"dataType": 'json',
+					"success": function(result){
+						console.log(result);
+						$(".login-warning").css('color', 'red');
+						$(".login-warning").text(result.message);
+						if(result.code == 0){
+							window.location.reload();
+						}
+					},
+					"error": function(e){
+						console.log(e);
+					}
+				});
+			});
+
+			$('.login-claim').on('click', function(){
+				alert('我们会将您的密码加密处理，您不必担心您的密码被泄露');
 			});
 		});
 	</script>
