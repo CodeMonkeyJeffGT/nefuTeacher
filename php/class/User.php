@@ -23,11 +23,11 @@ class User extends Base{
 		{
 			$this->error('学生请勿登录教师端系统');
 		}
-		$_SESSION['nefuteacher']['account'] = $account;
-		$_SESSION['nefuteacher']['password'] = $password;
-		$_SESSION['nefuteacher']['cookie'] = $nefuer->getCookie();
-		$_SESSION['nefuteacher']['name'] = $info['name'];
-		$_SESSION['nefuteacher']['college'] = $info['college'];
+		$_SESSION['teacher']['account'] = $account;
+		$_SESSION['teacher']['password'] = $password;
+		$_SESSION['teacher']['cookie'] = $nefuer->getCookie();
+		$_SESSION['teacher']['name'] = $info['name'];
+		$_SESSION['teacher']['college'] = $info['college'];
 
 		$this->success();
 	}
