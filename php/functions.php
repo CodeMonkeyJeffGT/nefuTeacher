@@ -13,7 +13,7 @@ function view($file = '')
 {
 	$file = $file == '' ? ele($_REQUEST, 'f', DEFAULT_FUNC) : $file;
 	$file = strtolower($file);
-	echo '<link rel="stylesheet" type="text/css" href="src/css/common.css">';
+	echo '<link rel="shortcut icon" href="src/img/favicon.png" /><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="src/css/common.css" /><link rel="stylesheet" type="text/css" href="src/css/' . $file . '.css" /><script src="https://code.jquery.com/jquery-1.11.3.js"></script>';
 	include(ROOT . '/view/' . $file . '.php');
 }
 
