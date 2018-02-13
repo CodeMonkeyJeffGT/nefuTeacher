@@ -72,13 +72,22 @@
 		<div class="login-title">知 派</div>
 		<div class="login-label">教&nbsp;&nbsp;&nbsp;&nbsp;师&nbsp;&nbsp;&nbsp;&nbsp;端</div>
 		<form class="login-area" onsubmit="return false;">
-			<input class="login-input" type="text" placeholder="账号"/>
-			<input class="login-input" type="password" placeholder="密码"/>
+			<input class="login-input" type="text" placeholder="账号" name="账号"/>
+			<input class="login-input" type="password" placeholder="密码" name="密码"/>
 			<input class="login-btn" type="submit" value="登录">
 		</form>
 	</div></td></tr></table>
+	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	<script src="src/js/jquery.md5.js"></script>
 	<script type="text/javascript">
-		
+		$(document).ready(function(){
+			$(".login-btn").on('click', function(){
+				var account = $(".login-input[name='账号']").val();
+				var password = $(".login-input[name='密码'").val();
+				password = $.md5(password);
+				console.log([account, password]);
+			});
+		});
 	</script>
 </body>
 </html>
