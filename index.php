@@ -8,6 +8,7 @@ $class = ele($_GET, 'c', DEFAULT_CLASS);
 $class = ucfirst(strtolower($class));
 $function = ele($_GET, 'f', DEFAULT_FUNC);
 
+date_default_timezone_set('PRC');
 if($class == 'V')
 {
 	view($function);
@@ -15,7 +16,8 @@ if($class == 'V')
 }
 
 session_start();
-if(empty($_SESSION['u_id']) && ($class != 'User' || $function != 'login'))
+//如果 未登录 且 不是登录操作 且 不是自身异步调用
+if(empty($_SESSION['nefuteacher']) && ($class != 'User' || $function != 'login') && $function != 'operate_auto')
 {
 	if(empty($_POST))
 	{

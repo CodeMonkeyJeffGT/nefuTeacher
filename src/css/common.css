@@ -6,3 +6,92 @@ body{
 	background-size: cover;
 	background-color: #b8e5f8;
 }
+.platform{
+	margin: 10px auto;
+	width: 1200px;
+}
+.menu{
+	position: relative;
+	float: left;
+	width: 190px;
+	min-height: 20px;
+	margin-right: 10px;
+}
+.menu-menu{
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+.menu-userinfo{
+	margin: 0 auto 10px auto;
+	padding: 10px 20px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+.userinfo-img{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+	background-size: cover;
+}
+.img-sunrise{
+	background-image: url('../img/sunrise.png');
+}
+.img-sun{
+	background-image: url('../img/sun.png');
+}
+.img-tea{
+	background-image: url('../img/tea.png');
+}
+.img-moon{
+	background-image: url('../img/moon.png');
+}
+.img-sleep{
+	background-image: url('../img/sleep.png');
+}
+.userinfo-name{
+	font-size: 15px;
+	color: #333333;
+}
+.userinfo-college{
+	margin-top: 2px;
+	font-size: 12px;
+	color: #999999;
+}
+.menu-element{
+	height: 22px;
+	font-size: 16px;
+	padding: 10px 20px;
+	cursor: pointer;
+	color: rgb(120, 120, 120);
+}
+.menu-element:hover{
+	background-color: rgb(252, 252, 252);
+	color: rgb(80, 80, 80);
+}
+.menu-ele-select{
+	background-color: rgb(245, 245, 245);
+	cursor: default;
+	color: rgb(80, 80, 80);
+}
+.menu-ele-select:hover{
+	background-color: rgb(245, 245, 245);
+}
+.operator{
+	position: relative;
+	float: right;
+	width: 1000px;
+}
+.operator-control{
+	width: 1000px;
+	height: 200px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+.operator-show{
+	width: 1000px;
+	margin-top: 10px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+	display: none;
+}

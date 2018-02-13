@@ -18,10 +18,17 @@ class User extends Base{
 		if (false === $nefuer) {
 			$this->error('账号密码错误或教务系统不可用');
 		}
-
+		$info = $nefuer->userinfo();
+		if (false == $info) 
+		{
+			$this->error('学生请勿登录教师端系统');
+		}
 		$_SESSION['nefuteacher']['account'] = $account;
 		$_SESSION['nefuteacher']['password'] = $password;
 		$_SESSION['nefuteacher']['cookie'] = $nefuer->getCookie();
+		$_SESSION['nefuteacher']['name'] = $info['name'];
+		$_SESSION['nefuteacher']['college'] = $info['college'];
+
 		$this->success();
 	}
 }

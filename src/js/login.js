@@ -10,7 +10,7 @@ $(document).ready(function(){
 			$(".login-warning").text('请输入密码');
 			return;
 		}
-		password = $.md5(password).toUpperCase();
+		// password = $.md5(password).toUpperCase();
 		var data = {
 			"account": account,
 			"password": password

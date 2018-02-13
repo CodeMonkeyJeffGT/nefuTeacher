@@ -31,7 +31,7 @@ class Nefu
 
 	public function userinfo()
 	{
-        $url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/ds/zwjs.do?Ves632DSdyV=NEW_XSD_DS';
+        $url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/jsxx/queryjsxxjb.do';
         $userinfo = $this->curl_safe($url);
         if(FALSE === $userinfo)
         	return FALSE;
@@ -39,29 +39,29 @@ class Nefu
         	return $this->html_escape($this->toInfo($userinfo));
 	}
 
-
-	public function userLessonProcess()
-	{
-		$url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/xsxj/doQueryXxwcqkKcsx.do';
-		$lessonPro = $this->curl_safe($url, array());//POST方式请求
-		if(FALSE === $lessonPro)
-			return FALSE;
-		return $this->html_escape($this->toLessonProcess($lessonPro));
-	}
-
-	public function allLessonInfo($term = '2017-2018-2')
-	{
-
-	}
-
-	public function lessonInfo($name)
-	{
-
-	}
-
 	public function getCookie()
 	{
 		return $this->cookie;
+	}
+
+	private function toInfo($page){
+		$preg = '/<tr[^>]*?>([\s\S]*?)<\/tr>/i';
+		if(preg_match_all($preg, $page, $page) == 0){
+			return false;
+		}
+		$page = array($page[1][3], $page[1][17]);
+		$preg = '/<TD[^>]*?>([\s\S]*?)<\/td>/i';
+		preg_match_all($preg, $page[0], $page[0]);
+		preg_match_all($preg, $page[1], $page[1]);
+		$preg = '/value=\"(.*?)\"/i';
+		preg_match_all($preg, $page[0][1][5], $page[0]);
+		preg_match_all($preg, $page[1][1][2], $page[1]);
+		$page = array(
+			'name' => $page[0][1][0],
+			'college' => str_replace('学院', '', $page[1][1][0]),
+		);
+
+		return $page;
 	}
 
 	private function curl_safe($url, $data = FALSE)
