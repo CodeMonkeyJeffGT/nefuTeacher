@@ -30,7 +30,7 @@
 			<div class="menu-menu">
 				<?php 
 				$now = '学生成绩';
-				$menulist = json_decode(file_get_contents(ROOT . '/php/store/menu.store'), true);
+				$menulist = json_decode(file_get_contents(ROOT . '/store/menu.store'), true);
 				foreach ($menulist as $element) { ?>
 				<div class="menu-element <?=$now==$element['name'] ? ' menu-ele-select' : '' ?>" <?php if($now!=$element['name']){?>onclick="window.location.assign('<?=$element["url"]?>')"<?php }?>>
 					<?= $element['name']?>
