@@ -13,7 +13,6 @@ class User extends Base{
 			$this->error('请输入密码');
 		}
 
-		verdor('Nefu');
 		$nefuer = Nefu::getInstance($account, $password);
 		if (false === $nefuer) {
 			$this->error('账号密码错误或教务系统不可用');

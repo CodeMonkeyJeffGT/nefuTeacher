@@ -83,10 +83,12 @@ body{
 	width: 1000px;
 }
 .operator-control{
-	width: 1000px;
+	width: 900px;
+	padding: 30px 50px;
 	height: 200px;
 	background-color: #fff;
 	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+	text-align: center;
 }
 .operator-show{
 	width: 1000px;
@@ -95,3 +97,134 @@ body{
 	box-shadow: 0 1px 3px rgba(26,26,26,.1);
 	display: none;
 }
+
+/**
+ * 控制板部分内容
+ */
+
+/**
+ * 选填单元
+ */
+.control-element{
+	display: inline-block;
+	width: 276px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
+}
+
+/**
+ * 选填提示label
+ */
+.control-label{
+	display: inline-block;
+	width: 60px;
+	margin-right: 10px;
+	font-size: 15px;
+	font-weight: 400;
+	color: rgb(50, 50, 50);
+	text-align: justify;
+	float: left;
+	margin-top: 3px;
+}
+.control-label:after{
+    content:':';
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    height: 0;
+}
+
+/**
+ * 输入框
+ */
+.control-input{
+	width: 198px;
+	padding: 0 10px;
+	line-height: 25px;
+	border:1px solid #ccc;
+	font-size: 12px;
+	position: relative;
+	display: inline-block;
+}
+.control-input:focus{
+	outline: none;
+}
+
+/**
+ * 下拉框
+ */
+.control-select{
+	width: 198px;
+	line-height: 25px;
+	border:1px solid #ccc;
+	font-size: 12px;
+	position: relative;
+	display: inline-block;
+}
+.control-select i{
+	width: 0;
+	height: 0;
+	border-top: 5px solid #333;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.control-select span{
+	display: block;
+	padding: 0 10px;
+	font-size: 13px;
+	height: 25px;
+	cursor: pointer;
+}
+.control-select ul{
+	width: 100%;
+	position: absolute;
+	z-index: 999}
+.control-select ul,.control-select li{
+	padding: 0;
+	margin:0;
+}
+.control-select li{
+	padding: 0 10px;line-height: 30px;
+	background-color: #ffffff;
+	color: #666;
+	list-style-type: none;
+	border:1px solid #ccc;
+	border-top: none;
+	cursor: pointer;
+	transition: all 1s ease 0s;
+}
+.control-select li:first-child{            
+	border-top: 1px solid #ccc;
+}
+.control-select li:hover{
+	background-color: rgb(240, 255, 255);
+	padding-left: 20px;
+	font-weight: bold;
+}
+.control-select ul{
+	display: none;
+}
+
+/**
+ * 多选框
+ */
+.control-multselect{
+	width: 198px;
+	line-height: 25px;
+	border:1px solid #ccc;
+	font-size: 12px;
+	position: relative;
+	display: inline-block;
+}
+.content-multselect>div{
+	display: hidden;
+	position: absolute;
+}
+
+
+

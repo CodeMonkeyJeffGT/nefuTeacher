@@ -1,6 +1,8 @@
 <?php
 
 class Base{
+
+	protected $nefuer;
 	
 	//code
 	//1 常规错误
@@ -8,7 +10,6 @@ class Base{
 
 	public function __construct()
 	{
-
 	}
 
 	protected function success($data = array()){
@@ -30,6 +31,10 @@ class Base{
 			'message' => $message,
 		));
 		die;
+	}
+
+	public function setNefuer($nefuer){
+		$this->nefuer = $nefuer;
 	}
 
 }

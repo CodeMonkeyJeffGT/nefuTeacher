@@ -1,18 +1,6 @@
 <html>
 <head>
 	<title>知派教师端 - 个人信息</title>
-	<style>
-		.select{width: 200px; line-height: 25px;  border:1px solid #ccc; font-size: 12px; position: relative; display: inline-block;  float: left; margin: 25px 0px 0px 39px;}
-		.select i{width: 0; height: 0; border-top: 5px solid #333; border-left: 5px solid transparent;  border-right: 5px solid transparent;
-			position: absolute; top: 10px; right: 10px;}
-		.select span{display: block; padding: 0 10px; font-size: 13px; height: 25px; cursor: pointer;}
-		.select ul{ width: 100%; position: absolute; z-index: 999}
-		.select ul,.select li{padding: 0; margin:0 }
-		.select li{padding: 0 10px;line-height: 30px; background-color: #ffffff; color: #666; list-style-type: none; border:1px solid #ccc; border-top: none; cursor: pointer;transition: all 1s ease 0s;}
-		.select li:first-child{border-top: 1px solid #ccc;}
-		.select li:hover{ background-color: rgb(240, 255, 255); padding-left: 20px; font-weight: bold; }
-		.select ul{display: none;}
-	</style>
 </head>
 <body>
 	<div class="platform">
@@ -52,63 +40,10 @@
 		</div>
 		<div class="operator">
 			<div class="operator-control">
-				<div class="select">
-					<span class="checkspan">学院<i></i></span>
-					<ul>
-						<li>
-							信息与计算机工程学院
-						</li>
-						<li>
-							理学院
-						</li>
-						<li>
-							文法学院
-						</li>
-						<li>
-							经济管理学院
-						</li>
-						<li>
-							林学院
-						</li>
-						<li>
-							园林学院
-						</li>
-						<li>
-							机电工程学院
-						</li>
-					</ul>
-				</div>
 			</div>
 			<div class="operator-show">
 			</div>
 		</div>
 	</div>
-	<script>
-		$(function(){
-			$(".checkspan").bind("click",function(){
-				var ul = $(this).siblings('ul')
-				if(ul.is(":hidden")){
-					$('.select ul').slideUp(400);
-					ul.slideDown('400', function() {
-						$(this).find("li").unbind('click');
-						$(this).find("li").bind("click",function(){
-							var selectLi=$(this).text() + '<i></i>';
-							var tmpRoot = $($($(this)[0].parentElement)[0].parentElement);
-							$(tmpRoot[0].children[0]).text('');
-							$(tmpRoot[0].children[0]).append(selectLi);
-							$(tmpRoot[0].children[1]).slideUp(400);
-						})
-						ul.mouseleave(function() {
-							$('.select ul').slideUp(400);
-						});
-					});
-				}else{
-					$(this).siblings('ul').slideUp(400)
-				}
-				
-			})
-			
-		})
-	</script>
 </body>
 </html>

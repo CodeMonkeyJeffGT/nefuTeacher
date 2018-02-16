@@ -32,5 +32,8 @@ if(empty($_SESSION['teacher']) && ($class != 'User' || $function != 'login') && 
 
 include(ROOT . '/php/class/Base.php');
 include(ROOT . '/php/class/' . $class . '.php');
+verdor('Nefu');
 $class = new $class();
+if( ! empty($_SESSION['teacher']))
+	$class->setNefuer(Nefu::getInstance($_SESSION['teacher']['account'], $_SESSION['teacher']['password'], $_SESSION['teacher']['cookie']));
 $class->$function();

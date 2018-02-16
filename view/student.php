@@ -40,10 +40,85 @@
 		</div>
 		<div class="operator">
 			<div class="operator-control">
+				<div class="control-element">
+					<label class="control-label">政治面貌</label>
+					<div class="control-select">
+						<span class="c-s-checkspan">-- 请选择 --<i></i></span>
+						<ul>
+							<li>
+								-- 请选择 --
+							</li>
+							<li>
+								信息与计算机工程学院
+							</li>
+							<li>
+								理学院
+							</li>
+							<li>
+								文法学院
+							</li>
+							<li>
+								经济管理学院
+							</li>
+							<li>
+								林学院
+							</li>
+							<li>
+								园林学院
+							</li>
+							<li>
+								机电工程学院
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="control-element">
+					<label class="control-label">姓名</label>
+					<input class="control-input" type-"text" />
+				</div>
+				<div class="control-element">
+					<label class="control-label"></label>
+					<div class="control-multselect">
+						<span class="c-ms-checkspan">-- 请选择 --<i></i></span>
+						<div>
+							<ul>
+								<li>
+									-- 请选择 --
+								</li>
+								<li>
+									信息与计算机工程学院
+								</li>
+								<li>
+									理学院
+								</li>
+								<li>
+									文法学院
+								</li>
+								<li>
+									经济管理学院
+								</li>
+								<li>
+									林学院
+								</li>
+								<li>
+									园林学院
+								</li>
+								<li>
+									机电工程学院
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="operator-show">
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$(function(){
+		console.log($('.control-multselect > div'));
+	})
+	</script>
 </body>
 </html>
