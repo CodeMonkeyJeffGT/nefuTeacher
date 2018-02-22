@@ -109,15 +109,15 @@
 				<div class="control-element">
 					<label class="control-label">显示方式</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">显示最好成绩<i></i></span>
+						<span class="c-s-checkspan" id="showWay">显示最好成绩<i></i></span>
 						<ul>
-							<li>
+							<li value="all">
 								显示全部成绩
 							</li>
-							<li>
+							<li value="best">
 								显示最好成绩
 							</li>
-							<li>
+							<li value="last">
 								显示最后成绩
 							</li>
 						</ul>
@@ -131,5 +131,13 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$(function(){
+
+		$('#showWay').on('DOMNodeInserted',function(){
+		    var txt = $(this).val();
+		    console.log(txt);
+		})
+	})</script>
 </body>
 </html>

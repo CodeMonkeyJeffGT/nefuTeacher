@@ -8,8 +8,8 @@ $(function(){
 				$(this).find("li").bind("click",function(){
 					var selectLi=$(this).text() + '<i></i>';
 					var tmpRoot = $($($(this)[0].parentElement)[0].parentElement);
-					$(tmpRoot[0].children[0]).text('');
-					$(tmpRoot[0].children[0]).append(selectLi);
+					$(tmpRoot[0].children[0]).val($(this).attr('value'));
+					$(tmpRoot[0].children[0]).html(selectLi);
 					$(tmpRoot[0].children[1]).slideUp(400);
 				})
 				ul.mouseleave(function() {
