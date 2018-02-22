@@ -1,4 +1,5 @@
 $(function(){
+	//下拉框
 	$(".c-s-checkspan").bind("click",function(){
 		var ul = $(this).siblings('ul')
 		if(ul.is(":hidden")){
@@ -18,6 +19,6 @@ $(function(){
 			});
 		}else{
 			$(this).siblings('ul').slideUp(400)
-		}	
+		}
 	})
 })

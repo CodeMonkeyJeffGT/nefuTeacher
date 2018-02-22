@@ -24,13 +24,16 @@ class User extends Base{
 		}
 		else
 		{
+			mkdir(ROOT . '/store/teacher/' . $account);
 			$info = $nefuer->userinfo();
 			if (false == $info) 
 			{
 				$this->error('学生请勿登录教师端系统');
 			}
-			file_put_contents($location . '.store', json_encode($info));
 		}
+		$info['account'] = $account;
+		$info['password'] = $password;
+		file_put_contents($location . '.store', json_encode($info));
 		$_SESSION['teacher']['account'] = $account;
 		$_SESSION['teacher']['password'] = $password;
 		$_SESSION['teacher']['cookie'] = $nefuer->getCookie();

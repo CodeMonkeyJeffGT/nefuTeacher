@@ -46,9 +46,9 @@
 				<div class="control-element">
 					<label class="control-label">年级</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">全部<i></i></span>
+						<span class="c-s-checkspan" id="control-grade">全部<i></i></span>
 						<ul>
-							<li>
+							<li value="">
 								全部
 							</li>
 						</ul>
@@ -57,9 +57,9 @@
 				<div class="control-element">
 					<label class="control-label">专业</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">全部<i></i></span>
+						<span class="c-s-checkspan" id="control-major">全部<i></i></span>
 						<ul>
-							<li>
+							<li value="">
 								全部
 							</li>
 						</ul>
@@ -68,9 +68,9 @@
 				<div class="control-element">
 					<label class="control-label">班级</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">全部<i></i></span>
+						<span class="c-s-checkspan" id="control-class">全部<i></i></span>
 						<ul>
-							<li>
+							<li value="">
 								全部
 							</li>
 						</ul>
@@ -79,9 +79,9 @@
 				<div class="control-element">
 					<label class="control-label">开课学期</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">全部<i></i></span>
+						<span class="c-s-checkspan" id="control-term">全部<i></i></span>
 						<ul>
-							<li>
+							<li value="">
 								全部
 							</li>
 						</ul>
@@ -90,9 +90,9 @@
 				<div class="control-element">
 					<label class="control-label">课程类型</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">全部<i></i></span>
+						<span class="c-s-checkspan" id="control-type">全部<i></i></span>
 						<ul>
-							<li>
+							<li value="">
 								全部
 							</li>
 						</ul>
@@ -100,24 +100,24 @@
 				</div>
 				<div class="control-element">
 					<label class="control-label">课程名称</label>
-					<input class="control-input" type-"text" />
+					<input class="control-input" type-"text" id="control-lesson" />
 				</div>
 				<div class="control-element">
 					<label class="control-label">学生</label>
-					<input class="control-input" type-"text" />
+					<input class="control-input" type-"text" id="control-student" />
 				</div>
 				<div class="control-element">
 					<label class="control-label">显示方式</label>
 					<div class="control-select">
-						<span class="c-s-checkspan" id="showWay">显示最好成绩<i></i></span>
+						<span class="c-s-checkspan" id="control-showWay">显示最好成绩<i></i></span>
 						<ul>
-							<li value="all">
+							<li value="2">
 								显示全部成绩
 							</li>
-							<li value="best">
+							<li value="1">
 								显示最好成绩
 							</li>
-							<li value="last">
+							<li value="0">
 								显示最后成绩
 							</li>
 						</ul>
@@ -132,12 +132,27 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-	$(function(){
+		$(function(){
 
-		$('#showWay').on('DOMNodeInserted',function(){
-		    var txt = $(this).val();
-		    console.log(txt);
+			$('#control-showWay').on('DOMNodeInserted',function(){
+			    var txt = $(this).val();
+			    console.log(txt);
+			})
 		})
-	})</script>
+		function getDropdown(data, callback)
+		{
+			$.ajax({
+				"url": "?c=score&f=getDropdown",
+				"method": "post",
+				"data": data,
+				"success": function(result){
+					callback(result);
+				},
+				"error": function(err){
+					console.log(err);
+				}
+			});
+		}
+	</script>
 </body>
 </html>
