@@ -93,13 +93,20 @@ body{
 	position: relative;
 	float: right;
 	width: 1000px;
+	zoom: 1;
 }
 .operator-control{
 	width: 900px;
 	padding: 30px 50px 10px 50px;
 	background-color: #fff;
 	box-shadow: 0 1px 3px rgba(26,26,26,.1);
-	overflow: hidden;
+}
+.operator-control:after {
+    content: '';
+    display: block;
+    visibility: hidden;
+    clear: both;
+    overflow: hidden;
 }
 .operator-show{
 	width: 1000px;

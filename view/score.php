@@ -46,10 +46,10 @@
 				<div class="control-element">
 					<label class="control-label">年级</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<span class="c-s-checkspan">全部<i></i></span>
 						<ul>
 							<li>
-								-- 可选 --
+								全部
 							</li>
 						</ul>
 					</div>
@@ -57,10 +57,10 @@
 				<div class="control-element">
 					<label class="control-label">专业</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<span class="c-s-checkspan">全部<i></i></span>
 						<ul>
 							<li>
-								-- 可选 --
+								全部
 							</li>
 						</ul>
 					</div>
@@ -68,10 +68,10 @@
 				<div class="control-element">
 					<label class="control-label">班级</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<span class="c-s-checkspan">全部<i></i></span>
 						<ul>
 							<li>
-								-- 可选 --
+								全部
 							</li>
 						</ul>
 					</div>
@@ -79,10 +79,10 @@
 				<div class="control-element">
 					<label class="control-label">开课学期</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<span class="c-s-checkspan">全部<i></i></span>
 						<ul>
 							<li>
-								-- 可选 --
+								全部
 							</li>
 						</ul>
 					</div>
@@ -90,10 +90,10 @@
 				<div class="control-element">
 					<label class="control-label">课程类型</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<span class="c-s-checkspan">全部<i></i></span>
 						<ul>
 							<li>
-								-- 可选 --
+								全部
 							</li>
 						</ul>
 					</div>
