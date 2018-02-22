@@ -22,7 +22,7 @@
 					$now = '5';
 				}
 				$sentences = array('早上好','上午好','中午好','下午好','晚上好','夜深了');
-				$css = array('sunrise','sun','sun','tea','moon','sleep');
+				$css = array('sunrise','sun','noon','tea','moon','sleep');
 				?>
 				<div class="userinfo-name"><?=$sentences[$now]?>，<?= mb_substr($_SESSION['teacher']['name'], 0, 1) ?>老师 <div class="userinfo-img img-<?=$css[$now]?>"></div></div>
 				<div class="userinfo-college"><?=$_SESSION['teacher']['college']?>学院</div>
@@ -38,7 +38,7 @@
 				<?php } ?>
 			</div>
 			<div class="menu-history">
-				<div></div>
+				<div>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br></div>
 			</div>
 		</div>
 		<div class="operator">
@@ -51,21 +51,6 @@
 							<li>
 								-- 可选 --
 							</li>
-							<li>
-								2017
-							</li>
-							<li>
-								2016
-							</li>
-							<li>
-								2015
-							</li>
-							<li>
-								2014
-							</li>
-							<li>
-								2013
-							</li>
 						</ul>
 					</div>
 				</div>
@@ -77,41 +62,66 @@
 							<li>
 								-- 可选 --
 							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="control-element">
+					<label class="control-label">班级</label>
+					<div class="control-select">
+						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<ul>
 							<li>
-								计算机科学与技术
-							</li>
-							<li>
-								信息管理与信息系统
-							</li>
-							<li>
-								软件工程
+								-- 可选 --
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="control-element">
-					<label class="control-label">姓名</label>
+					<label class="control-label">开课学期</label>
+					<div class="control-select">
+						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<ul>
+							<li>
+								-- 可选 --
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="control-element">
+					<label class="control-label">课程类型</label>
+					<div class="control-select">
+						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<ul>
+							<li>
+								-- 可选 --
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="control-element">
+					<label class="control-label">课程名称</label>
 					<input class="control-input" type-"text" />
 				</div>
 				<div class="control-element">
-					<label class="control-label">姓名</label>
+					<label class="control-label">学生</label>
 					<input class="control-input" type-"text" />
 				</div>
 				<div class="control-element">
-					<label class="control-label">姓名</label>
-					<input class="control-input" type-"text" />
-				</div>
-				<div class="control-element">
-					<label class="control-label">姓名</label>
-					<input class="control-input" type-"text" />
-				</div>
-				<div class="control-element">
-					<label class="control-label">姓名</label>
-					<input class="control-input" type-"text" />
-				</div>
-				<div class="control-element">
-					<label class="control-label">姓名</label>
-					<input class="control-input" type-"text" />
+					<label class="control-label">显示方式</label>
+					<div class="control-select">
+						<span class="c-s-checkspan">显示最好成绩<i></i></span>
+						<ul>
+							<li>
+								显示全部成绩
+							</li>
+							<li>
+								显示最好成绩
+							</li>
+							<li>
+								显示最后成绩
+							</li>
+						</ul>
+					</div>
 				</div>
 				<div class="control-element">
 					<div class="control-btn">搜索</div>

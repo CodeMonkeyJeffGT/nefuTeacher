@@ -17,6 +17,7 @@ body{
 	margin-right: 10px;
 	top: 10px;
 	bottom: 10px;
+	overflow-y: auto;
 }
 .menu-menu{
 	background-color: #fff;
@@ -48,6 +49,9 @@ body{
 }
 .img-sun{
 	background-image: url('../img/sun.png');
+}
+.img-noon{
+	background-image: url('../img/noon.png');
 }
 .img-tea{
 	background-image: url('../img/tea.png');
@@ -96,7 +100,7 @@ body{
 	padding: 30px 50px 10px 50px;
 	background-color: #fff;
 	box-shadow: 0 1px 3px rgba(26,26,26,.1);
-	text-align: center;
+	overflow: hidden;
 }
 .operator-show{
 	width: 1000px;
@@ -114,7 +118,7 @@ body{
  * 选填单元
  */
 .control-element{
-	display: inline-block;
+	float: left;
 	width: 276px;
 	padding-bottom: 20px;
 	padding-left: 10px;
