@@ -24,7 +24,7 @@ function view($file = '')
 	include(ROOT . '/view/' . $file . '.php');
 }
 
-function verdor($file = '')
+function verdor($file)
 {
 	include(ROOT . '/php/vendor/' . $file . '.php');
 }

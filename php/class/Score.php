@@ -1,9 +1,9 @@
 <?php
 
-class Exam extends Base{ 
+class Score extends Base{ 
 
 	public function index(){
-		view('exam');
+		view('score');
 	}
 
 	public function stepChoice(){
@@ -11,7 +11,7 @@ class Exam extends Base{
 	}
 
 	public function start(){
-		$url = $_SERVER['SERVER_NAME'] . '?c=exam&f=operate_auto'; 
+		$url = $_SERVER['SERVER_NAME'] . '?c=score&f=operate_auto'; 
 		$param = array( 
 		);
 		$this->doRequest($url, $param);

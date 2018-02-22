@@ -1,1 +1,1 @@
-[{"name": "学生成绩", "url": "?c=exam"},{"name": "学生列表", "url": "?c=student"},{"name": "个人信息", "url": "?c=user&f=info"}]
+[{"name": "学生成绩", "url": "?c=score"},{"name": "学生列表", "url": "?c=student"},{"name": "个人信息", "url": "?c=user&f=info"}]

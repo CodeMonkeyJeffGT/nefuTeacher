@@ -37,37 +37,54 @@
 				</div>
 				<?php } ?>
 			</div>
+			<div class="menu-history">
+				<div></div>
+			</div>
 		</div>
 		<div class="operator">
 			<div class="operator-control">
 				<div class="control-element">
-					<label class="control-label">政治面貌</label>
+					<label class="control-label">年级</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">-- 请选择 --<i></i></span>
+						<span class="c-s-checkspan">-- 可选 --<i></i></span>
 						<ul>
 							<li>
-								-- 请选择 --
+								-- 可选 --
 							</li>
 							<li>
-								信息与计算机工程学院
+								2017
 							</li>
 							<li>
-								理学院
+								2016
 							</li>
 							<li>
-								文法学院
+								2015
 							</li>
 							<li>
-								经济管理学院
+								2014
 							</li>
 							<li>
-								林学院
+								2013
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="control-element">
+					<label class="control-label">专业</label>
+					<div class="control-select">
+						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<ul>
+							<li>
+								-- 可选 --
 							</li>
 							<li>
-								园林学院
+								计算机科学与技术
 							</li>
 							<li>
-								机电工程学院
+								信息管理与信息系统
+							</li>
+							<li>
+								软件工程
 							</li>
 						</ul>
 					</div>
@@ -76,49 +93,10 @@
 					<label class="control-label">姓名</label>
 					<input class="control-input" type-"text" />
 				</div>
-				<div class="control-element">
-					<label class="control-label"></label>
-					<div class="control-multselect">
-						<span class="c-ms-checkspan">-- 请选择 --<i></i></span>
-						<div>
-							<ul>
-								<li>
-									-- 请选择 --
-								</li>
-								<li>
-									信息与计算机工程学院
-								</li>
-								<li>
-									理学院
-								</li>
-								<li>
-									文法学院
-								</li>
-								<li>
-									经济管理学院
-								</li>
-								<li>
-									林学院
-								</li>
-								<li>
-									园林学院
-								</li>
-								<li>
-									机电工程学院
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="operator-show">
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-	$(function(){
-		console.log($('.control-multselect > div'));
-	})
-	</script>
 </body>
 </html>

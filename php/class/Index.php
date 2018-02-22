@@ -6,6 +6,6 @@ class Index extends Base{
 
 	public function index()
 	{
-		view('exam');
+		view('score');
 	}
 }
