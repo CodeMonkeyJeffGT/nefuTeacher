@@ -48,6 +48,22 @@ class User extends Base{
 	}
 
 	public function reload(){
-		
+		$info = $this->nefuer->userinfo();
+		if (false == $info) 
+		{
+			$this->goLogin();
+		}
+		$info['account'] = $_SESSION['teacher']['account'];
+		$info['password'] = $_SESSION['teacher']['password'];
+		$location = ROOT . '/store/teacher/' . $info['account'];
+		$_SESSION['teacher']['name'] = $info['name'];
+		$_SESSION['teacher']['college'] = $info['college'];
+		file_put_contents($location . '.store', json_encode($info));
+		$this->success();
+	}
+
+	public function logout(){
+		unset($_SESSION['teacher']);
+		$this->success();
 	}
 }

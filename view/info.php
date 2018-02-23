@@ -41,18 +41,61 @@
 		<div class="operator">
 			<div class="operator-control">
 				<div class="control-element">
+				</div>
+				<div class="control-element">
 					<label class="control-label">姓名</label>
 					<input class="control-input" type-"text" id="control-student" value="<?=$_SESSION['teacher']['name']?>" disabled />
+				</div>
+				<div class="control-element">
+				</div>
+				<div class="control-element">
 				</div>
 				<div class="control-element">
 					<label class="control-label">学院</label>
 					<input class="control-input" type-"text" id="control-student" value="<?=$_SESSION['teacher']['college']?>学院" disabled />
 				</div>
+				<div class="control-element" style="margin-left: 160px;">
+					<div class="control-btn" id="reload">刷新个人信息</div>
+				</div>
 				<div class="control-element">
-					<div class="control-btn">刷新个人信息</div>
+					<div class="control-btn" id="logout">退出登录</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("#reload").on('click', function(){
+				$.ajax({
+					"url": "?c=user&f=reload",
+					"method": "post",
+					"data": {'reload':true},
+					"dataType": 'json',
+					"success": function(result){
+						if(result.code == 0)
+						{
+							alert('刷新成功');
+						}
+						window.location.reload();
+					}
+				});
+			});
+			$("#logout").on('click', function(){
+				$.ajax({
+					"url": "?c=user&f=logout",
+					"method": "post",
+					"data": {'logout':true},
+					"dataType": 'json',
+					"success": function(result){
+						console.log(result);
+						window.location.reload();
+					},
+					"error": function(err){
+						console.log(err);
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>

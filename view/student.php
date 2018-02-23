@@ -46,25 +46,10 @@
 				<div class="control-element">
 					<label class="control-label">年级</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<span class="c-s-checkspan" id="control-grade">全部<i></i></span>
 						<ul>
-							<li>
-								-- 可选 --
-							</li>
-							<li>
-								2017
-							</li>
-							<li>
-								2016
-							</li>
-							<li>
-								2015
-							</li>
-							<li>
-								2014
-							</li>
-							<li>
-								2013
+							<li value="">
+								全部
 							</li>
 						</ul>
 					</div>
@@ -72,26 +57,24 @@
 				<div class="control-element">
 					<label class="control-label">专业</label>
 					<div class="control-select">
-						<span class="c-s-checkspan">-- 可选 --<i></i></span>
+						<span class="c-s-checkspan" id="control-major">全部<i></i></span>
 						<ul>
-							<li>
-								-- 可选 --
-							</li>
-							<li>
-								计算机科学与技术
-							</li>
-							<li>
-								信息管理与信息系统
-							</li>
-							<li>
-								软件工程
+							<li value="">
+								全部
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="control-element">
-					<label class="control-label">姓名</label>
-					<input class="control-input" type-"text" />
+					<label class="control-label">班级</label>
+					<div class="control-select">
+						<span class="c-s-checkspan" id="control-class">全部<i></i></span>
+						<ul>
+							<li value="">
+								全部
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="operator-show">
