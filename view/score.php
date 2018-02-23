@@ -95,6 +95,36 @@
 							<li value="">
 								全部
 							</li>
+							<li value="07">
+								通识教育必修课
+							</li>
+							<li value="09">
+								学科基础课
+							</li>
+							<li value="10">
+								实践教学
+							</li>
+							<li value="11">
+								通识教育课
+							</li>
+							<li value="01">
+								公共课
+							</li>
+							<li value="02">
+								公共基础课
+							</li>
+							<li value="03">
+								专业基础课
+							</li>
+							<li value="04">
+								专业课
+							</li>
+							<li value="05">
+								专业选修课
+							</li>
+							<li value="06">
+								通识教育选修课
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -132,21 +162,87 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+		var college = 0;
+		var flag = true;
+		var rec_grade = '';
+		var rec_major = '';
 		$(function(){
-
-			$('#control-showWay').on('DOMNodeInserted',function(){
-			    var txt = $(this).val();
-			    console.log(txt);
-			})
+			getDropdown();
+			$('#control-grade').on('DOMNodeInserted',function(){
+				var grade = $('#control-grade').val();
+				if(grade != rec_grade)
+				{
+					rec_grade = grade;
+					rec_major = '';
+					var data = {
+						'college': college,
+						'grade' : rec_grade,
+					}
+					getDropdown(data, 1);
+				}
+			});
+			$('#control-major').on('DOMNodeInserted',function(){
+				var major = $('#control-major').val();
+				if(major != rec_major)
+				{
+					rec_major = major;
+					var data = {
+						'college': college,
+						'grade' : rec_grade,
+						'major' : rec_major,
+					}
+					getDropdown(data, 2);
+				}
+			});
 		})
-		function getDropdown(data, callback)
+		function getDropdown(data = {}, level = 0)
 		{
 			$.ajax({
 				"url": "?c=score&f=getDropdown",
 				"method": "post",
 				"data": data,
+				"dataType": 'json',
 				"success": function(result){
-					callback(result);
+					if(result.code != 0)
+						window.location.reload();
+					result = result.data;
+					if(0 == level)
+					{
+						college = result.college;
+						var grade = '';
+						for(var key in result.grade)
+						{
+							grade = '<li value="' + key + '">' + result.grade[key] + '</li>' + grade;
+						}
+						grade = '<li value="">全部</li>' + grade;
+						$($($('#control-grade')[0].parentElement)[0].children[1]).html(grade);
+					}
+					else if(1 == level)
+					{
+						var major = '<li value="">全部</li>';
+						for(var key in result.major)
+						{
+							major += '<li value="' + key + '">' + result.major[key] + '</li>';
+						}
+						$($($('#control-major')[0].parentElement)[0].children[1]).html(major);
+						$($($('#control-class')[0].parentElement)[0].children[1]).html('<li value="">全部</li>');
+						$('#control-major').val('');
+						$('#control-major').html('全部<i></i>');
+						$('#control-class').val('');
+						$('#control-class').html('全部<i></i>');
+					}
+					else if(2 == level)
+					{
+						var classs = '<li value="">全部</li>';
+						for(var key in result.class)
+						{
+							classs += '<li value="' + key + '">' + result.class[key] + '</li>';
+						}
+						$($($('#control-class')[0].parentElement)[0].children[1]).html(classs);
+						$('#control-class').val('');
+						$('#control-class').html('全部<i></i>');
+
+					}
 				},
 				"error": function(err){
 					console.log(err);

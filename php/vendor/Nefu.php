@@ -39,6 +39,24 @@ class Nefu
         	return $this->html_escape($this->toInfo($userinfo));
 	}
 
+	public function getScores($data){
+		$url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/cjgl/cjzkcx_listxsd.do';
+		$result = $this->curl_safe($url, $data);
+        if(FALSE === $result)
+        	return FALSE;
+        else
+        	return $this->html_escape($this->toScores($result));
+	}
+
+	public function getStepInfo($data){
+		$url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/jsjc/xsjbxx.do';
+		$result = $this->curl_safe($url, $data);
+        if(FALSE === $result)
+        	return FALSE;
+        else
+        	return $this->html_escape($this->toStepInfo($result));
+	}
+
 	public function getCookie()
 	{
 		return $this->cookie;
@@ -62,6 +80,44 @@ class Nefu
 		);
 
 		return $page;
+	}
+
+	private function toStepInfo($page){
+		$preg = '/<tr[^>]*?>([\s\S]*?)<\/tr>/i';
+		if(preg_match_all($preg, $page, $page) == 0){
+			return false;
+		}
+		$page = $page[1];
+		$preg = '/<td>([\s\S]*?)<\/td>/i';
+		$preg_v = '/value="([\s\S]*?)"/i';
+		$preg_t = '/<option[^>]*?>([\s\S]*?)<\/option>/i';
+
+		preg_match_all($preg, $page[2], $page[2]);
+		$page[2] = $page[2][1];
+		preg_match_all($preg_v, $page[2][0], $values);
+		preg_match_all($preg_t, $page[2][0], $keys);
+		$keys[1] = preg_replace('/\[[^\]]*?\]/i', '', $keys[1]);
+		$result['college'] = array_combine($keys[1], $values[1]);
+		array_shift($result['college']);
+
+		preg_match_all($preg_v, $page[2][1], $keys);
+		preg_match_all($preg_t, $page[2][1], $values);
+		$result['grade'] = array_combine($keys[1], $values[1]);
+		unset($result['grade']['']);
+
+		preg_match_all($preg, $page[3], $page[3]);
+		$page[3] = $page[3][1];
+		preg_match_all($preg_v, $page[3][0], $keys);
+		preg_match_all($preg_t, $page[3][0], $values);
+		$result['major'] = array_combine($keys[1], $values[1]);
+		unset($result['major']['']);
+
+		preg_match_all($preg_v, $page[3][1], $keys);
+		preg_match_all($preg_t, $page[3][1], $values);
+		$result['class'] = array_combine($keys[1], $values[1]);
+		unset($result['class']['']);
+
+		return $result;
 	}
 
 	private function curl_safe($url, $data = FALSE)

@@ -40,8 +40,17 @@
 		</div>
 		<div class="operator">
 			<div class="operator-control">
-			</div>
-			<div class="operator-show">
+				<div class="control-element">
+					<label class="control-label">姓名</label>
+					<input class="control-input" type-"text" id="control-student" value="<?=$_SESSION['teacher']['name']?>" disabled />
+				</div>
+				<div class="control-element">
+					<label class="control-label">学院</label>
+					<input class="control-input" type-"text" id="control-student" value="<?=$_SESSION['teacher']['college']?>学院" disabled />
+				</div>
+				<div class="control-element">
+					<div class="control-btn">刷新个人信息</div>
+				</div>
 			</div>
 		</div>
 	</div>

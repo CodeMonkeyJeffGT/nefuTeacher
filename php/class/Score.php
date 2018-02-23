@@ -26,6 +26,23 @@ class Score extends Base{
 		set_time_limit(0);
 	}
 
+	public function getDropdown(){
+		$college = ele($_POST, 'college', '');
+		$grade = ele($_POST, 'grade', '');
+		$major = ele($_POST, 'major', '');
+		$data = array(
+			'xsyx' => $college,
+			'xsnj' => $grade,
+			'xszy' => $major,
+		);
+		$stepInfo = $this->nefuer->getStepInfo($data);
+		$stepInfo['college'] = $stepInfo['college'][$_SESSION['teacher']['college'] . '学院'];
+		if(false === $stepInfo)
+			$this->goLogin();
+		else
+			$this->success($stepInfo);
+	}
+
 	private function doRequest($url, $param){
 		$urlinfo = parse_url($url);
 		$host = $urlinfo['host'];
