@@ -49,7 +49,7 @@ class Nefu
 	}
 
 	public function getStepInfo($data){
-		$url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/jsjc/xsjbxx.do';
+		$url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/cjgl/cjzkcx.do';
 		$result = $this->curl_safe($url, $data);
         if(FALSE === $result)
         	return FALSE;
@@ -92,14 +92,23 @@ class Nefu
 		$preg_v = '/value="([\s\S]*?)"/i';
 		$preg_t = '/<option[^>]*?>([\s\S]*?)<\/option>/i';
 
-		preg_match_all($preg, $page[2], $page[2]);
-		$page[2] = $page[2][1];
-		preg_match_all($preg_v, $page[2][0], $values);
-		preg_match_all($preg_t, $page[2][0], $keys);
+		preg_match_all($preg, $page[1], $page[1]);
+		$page[1] = $page[1][1];
+		
+		preg_match_all($preg_v, $page[1][1], $values);
+		preg_match_all($preg_t, $page[1][1], $keys);
 		$keys[1] = preg_replace('/\[[^\]]*?\]/i', '', $keys[1]);
 		$result['college'] = array_combine($keys[1], $values[1]);
-		array_shift($result['college']);
+		unset($result['college']['--请选择--']);
 
+		preg_match_all($preg, $page[2], $page[2]);
+		$page[2] = $page[2][1];
+
+		preg_match_all($preg_v, $page[2][0], $keys);
+		preg_match_all($preg_t, $page[2][0], $values);
+		$result['term'] = array_combine($keys[1], $values[1]);
+		unset($result['term']['--请选择--']);
+		
 		preg_match_all($preg_v, $page[2][1], $keys);
 		preg_match_all($preg_t, $page[2][1], $values);
 		$result['grade'] = array_combine($keys[1], $values[1]);
@@ -107,13 +116,19 @@ class Nefu
 
 		preg_match_all($preg, $page[3], $page[3]);
 		$page[3] = $page[3][1];
-		preg_match_all($preg_v, $page[3][0], $keys);
-		preg_match_all($preg_t, $page[3][0], $values);
+		
+		preg_match_all($preg_v, $page[3][1], $keys);
+		preg_match_all($preg_t, $page[3][1], $values);
+		$keys[1] = preg_replace('/\[[^\]]*?\]/i', '', $keys[1]);
 		$result['major'] = array_combine($keys[1], $values[1]);
 		unset($result['major']['']);
 
-		preg_match_all($preg_v, $page[3][1], $keys);
-		preg_match_all($preg_t, $page[3][1], $values);
+		preg_match_all($preg, $page[4], $page[4]);
+		$page[4] = $page[4][1];
+		
+		preg_match_all($preg_v, $page[4][1], $keys);
+		preg_match_all($preg_t, $page[4][1], $values);
+		$keys[1] = preg_replace('/\[[^\]]*?\]/i', '', $keys[1]);
 		$result['class'] = array_combine($keys[1], $values[1]);
 		unset($result['class']['']);
 

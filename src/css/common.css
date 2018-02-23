@@ -198,11 +198,13 @@ body{
 	font-size: 13px;
 	height: 25px;
 	cursor: pointer;
+	overflow: auto;
 }
 .control-select ul{
 	width: 100%;
 	position: absolute;
-	z-index: 999}
+	z-index: 999;
+}
 .control-select ul,.control-select li{
 	padding: 0;
 	margin:0;
@@ -215,7 +217,7 @@ body{
 	border:1px solid #ccc;
 	border-top: none;
 	cursor: pointer;
-	transition: all 1s ease 0s;
+	transition: all 0.5s ease 0s;
 }
 .control-select li:first-child{            
 	border-top: 1px solid #ccc;
