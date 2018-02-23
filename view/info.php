@@ -54,8 +54,16 @@
 					<label class="control-label">学院</label>
 					<input class="control-input" type-"text" id="control-student" value="<?=$_SESSION['teacher']['college']?>学院" disabled />
 				</div>
-				<div class="control-element" style="margin-left: 160px;">
+				<div class="control-element">
+				</div>
+				<div class="control-element">
+				</div>
+				<div class="control-element">
 					<div class="control-btn" id="reload">刷新个人信息</div>
+				</div>
+				<div class="control-element">
+				</div>
+				<div class="control-element">
 				</div>
 				<div class="control-element">
 					<div class="control-btn" id="logout">退出登录</div>
