@@ -11,7 +11,7 @@ body{
 .platform{
 	margin: auto;
 	width: 1200px;
-	height: 781px;
+	height: 681px;
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
@@ -37,7 +37,7 @@ body{
 	background-color: #fff;
 	box-shadow: 0 1px 3px rgba(26,26,26,.1);
 	width: 190px;
-	height: 575px;
+	height: 475px;
 	overflow: hidden;
 	margin-top: 10px;
 }
@@ -95,7 +95,7 @@ body{
 	background-color: rgb(245, 245, 245);
 }
 .history-content{
-	height: 575px;
+	height: 475px;
 	width: 220px;
 	overflow-y: auto;
 }
@@ -170,7 +170,7 @@ body{
 }
 .operator-show{
 	width: 1000px;
-	height: 590px;
+	height: 490px;
 	margin-top: 10px;
 	background-color: #fff;
 	box-shadow: 0 1px 3px rgba(26,26,26,.1);
