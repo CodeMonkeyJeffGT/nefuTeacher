@@ -28,6 +28,7 @@ class Score extends Base{
 			'status' => 1,
 		);
 		file_put_contents($history_dir . 'history', json_encode($history));
+		file_put_contents($history_dir . $id, '');
 		$url = 'http://' . $_SERVER['SERVER_NAME'] . '/?c=score&f=operate_auto'; 
 		$param = array(
 		);
@@ -41,12 +42,29 @@ class Score extends Base{
 	}
 
 	public function info(){
-
+		$this->success($_POST);
 	}
 
 	public function operate_auto(){
 		ignore_user_abort(true);
 		set_time_limit(0);
+	}
+
+	public function remove(){
+		$id = ele($_POST, 'id');
+		if(is_null($id))
+			$this->error('请指定id');
+		$file = ROOT . '/store/teacher/' . $teacher . '/score/' . $id;
+		unset($file);
+		$history = json_decode(file_get_contents(ROOT . '/store/teacher/' . $teacher . '/score/history'), true);
+		foreach ($history as $key => $value) {
+			if($value['id'] == $id)
+			{
+				unset($history[$key]);
+				break;
+			}
+		}
+		file_put_contents(ROOT . '/store/teacher/' . $teacher . '/score/history', json_encode($history));
 	}
 
 	public function getDropdown(){

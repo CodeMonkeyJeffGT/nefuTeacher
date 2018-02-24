@@ -169,7 +169,6 @@ function loadHistory(type, loop = false, id = false){
 			if(historyStore == str){
 				return;
 			}
-			console.log('刷新');
 			historyStore = str;
 			if(result.length == 0)
 			{
@@ -182,10 +181,30 @@ function loadHistory(type, loop = false, id = false){
 				{
 					tstr += ' history-selected';
 				}
-				tstr += '"><div class="history-ele-title">' + result[i].title + '</div><span class="history-ele-time">' + result[i].time + '</span> <span class="history-ele-status h-e-s-' + (result[i].status == 0 ? 'done' : result[i].status == 1 ? 'doing' : 'fail') + '"></span></div>';
+				tstr += '" value=' + result[i].id + '><div class="history-ele-title">' + result[i].title + '</div><span class="history-ele-time">' + result[i].time + '</span> <span class="history-ele-status h-e-s-' + (result[i].status == 0 ? 'done' : result[i].status == 1 ? 'doing' : 'fail') + '"></span></div>';
 				str = tstr + str;
 			}
 			$('.history-content').html(str);
+			$('.history-element').on('click', function(){
+				$('.history-selected').removeClass('history-selected');
+				$(this).addClass('history-selected');
+				historyNow = $(this).attr('value');
+				var data = {
+					"id": historyNow,
+				};
+				$.ajax({
+					"url": "?c=" + type + "&f=info",
+					"method": "post",
+					"data": data,
+					"dataType": 'json',
+					"success": function(result){
+						console.log(result);
+					},
+					"error": function(err){
+						console.log(err);
+					}
+				});
+			});
 		},
 		"error": function(err){
 			console.log(err);
