@@ -22,7 +22,7 @@
 					$now = '5';
 				}
 				$sentences = array('早上好','上午好','中午好','下午好','晚上好','夜深了');
-				$css = array('sunrise','sun','sun','tea','moon','sleep');
+				$css = array('sunrise','sun','noon','tea','moon','sleep');
 				?>
 				<div class="userinfo-name"><?=$sentences[$now]?>，<?= mb_substr($_SESSION['teacher']['name'], 0, 1) ?>老师 <div class="userinfo-img img-<?=$css[$now]?>"></div></div>
 				<div class="userinfo-college"><?=$_SESSION['teacher']['college']?>学院</div>

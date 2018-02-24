@@ -38,7 +38,18 @@
 				<?php } ?>
 			</div>
 			<div class="menu-history">
-				<div></div>
+				<div class="history-content">
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通-高-谷
+						</div>
+						<span class="history-ele-time">
+							2018.02.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-done">
+						</span>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="operator">
