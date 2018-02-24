@@ -15,6 +15,5 @@
 		</form>
 	</div></td></tr></table>
 	<script src="src/js/jquery.md5.js"></script>
-	<script src="src/js/login.js"></script>
 </body>
 </html>

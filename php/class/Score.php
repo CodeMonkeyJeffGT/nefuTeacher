@@ -6,15 +6,38 @@ class Score extends Base{
 		view('score');
 	}
 
-	public function stepChoice(){
-
-	}
-
 	public function start(){
-		$url = $_SERVER['SERVER_NAME'] . '?c=score&f=operate_auto'; 
-		$param = array( 
+		$grade = ele($_POST, 'grade', '');
+		$major = ele($_POST, 'major', '');
+		$class = ele($_POST, 'class', '');
+		$term = ele($_POST, 'term', '');
+		$type = ele($_POST, 'type', '');
+		$lesson = ele($_POST, 'lesson', '');
+		$student = ele($_POST, 'student', '');
+		$showWay = ele($_POST, 'showWay', '');
+		$title = ele($_POST, 'title', '');
+		$time = date('Y-m-d H:i', time());
+		$teacher = $_SESSION['teacher']['account'];
+		$history_dir = ROOT . '/store/teacher/' . $teacher . '/score/';
+		$history = json_decode(file_get_contents($history_dir . 'history'), true);
+		$id = count($history) == 0 ? 0 : $history[count($history) - 1]['id'] + 1;
+		$history[] = array(
+			'id' => $id,
+			'title' => $title,
+			'time' => $time,
+			'status' => 1,
+		);
+		file_put_contents($history_dir . 'history', json_encode($history));
+		$url = 'http://' . $_SERVER['SERVER_NAME'] . '/?c=score&f=operate_auto'; 
+		$param = array(
 		);
 		$this->doRequest($url, $param);
+		$this->success(array(
+			'id' => $id,
+			'title' => $title,
+			'time' => $time,
+			'status' => 1,
+		));
 	}
 
 	public function info(){

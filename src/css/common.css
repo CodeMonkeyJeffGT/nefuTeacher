@@ -105,6 +105,7 @@ body{
 	overflow: hidden;
 	color: rgb(120, 120, 120);
 	cursor: pointer;
+	border-bottom: 1px solid lightgray;
 }
 .history-element:hover{
 	background-color: rgb(252, 252, 252);
@@ -119,10 +120,10 @@ body{
 	background-color: rgb(245, 245, 245);
 }
 .history-ele-title{
-	font-size: 13px;
+	font-size: 14px;
 }
 .history-ele-time{
-	font-size: 14px;
+	font-size: 13px;
 }
 .history-ele-status{
 	width: 0;
@@ -260,7 +261,7 @@ body{
 	overflow: auto;
 }
 .control-select ul{
-	width: 190px;
+	width: 198px;
 	position: absolute;
 	z-index: 999;
 }

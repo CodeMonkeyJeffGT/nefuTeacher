@@ -39,106 +39,6 @@
 			</div>
 			<div class="menu-history">
 				<div class="history-content">
-					<div class="history-element history-selected">
-						<div class="history-ele-title">
-							17-软件-4-17上-通-高-谷
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-done">
-						</span>
-					</div>
-					<div class="history-element">
-						<div class="history-ele-title">
-							17-软件-4-17上-通
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-doing">
-						</span>
-					</div>
-					<div class="history-element">
-						<div class="history-ele-title">
-							17-软件-4-17上-通
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-fail">
-						</span>
-					</div>
-					<div class="history-element">
-						<div class="history-ele-title">
-							17-软件-4-17上-通-高-谷
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-done">
-						</span>
-					</div>
-					<div class="history-element">
-						<div class="history-ele-title">
-							17-软件-4-17上-通-高-谷
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-done">
-						</span>
-					</div>
-					<div class="history-element">
-						<div class="history-ele-title">
-							17-软件-4-17上-通-高-谷
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-done">
-						</span>
-					</div>
-					<div class="history-element">
-						<div class="history-ele-title">
-							17-软件-4-17上-通-高-谷
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-done">
-						</span>
-					</div>
-					<div class="history-element">
-						<div class="history-ele-title">
-							17-软件-4-17上-通-高-谷
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-done">
-						</span>
-					</div>
-					<div class="history-element">
-						<div class="history-ele-title">
-							17-软件-4-17上-通-高-谷
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-done">
-						</span>
-					</div>
-					<div class="history-element">
-						<div class="history-ele-title">
-							17-软件-4-17上-通-高-谷
-						</div>
-						<span class="history-ele-time">
-							2018.02.23 16:22
-						</span>
-						<span class="history-ele-status h-e-s-done">
-						</span>
-					</div>
 				</div>	
 			</div>
 		</div>
@@ -149,9 +49,7 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-grade">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
+							<li value="">全部</li>
 						</ul>
 					</div>
 				</div>
@@ -160,9 +58,7 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-major">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
+							<li value="">全部</li>
 						</ul>
 					</div>
 				</div>
@@ -171,9 +67,7 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-class">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
+							<li value="">全部</li>
 						</ul>
 					</div>
 				</div>
@@ -182,9 +76,7 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-term">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
+							<li value="">全部</li>
 						</ul>
 					</div>
 				</div>
@@ -193,39 +85,17 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-type">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
-							<li value="07">
-								通识教育必修课
-							</li>
-							<li value="09">
-								学科基础课
-							</li>
-							<li value="10">
-								实践教学
-							</li>
-							<li value="11">
-								通识教育课
-							</li>
-							<li value="01">
-								公共课
-							</li>
-							<li value="02">
-								公共基础课
-							</li>
-							<li value="03">
-								专业基础课
-							</li>
-							<li value="04">
-								专业课
-							</li>
-							<li value="05">
-								专业选修课
-							</li>
-							<li value="06">
-								通识教育选修课
-							</li>
+							<li value="">全部</li>
+							<li value="07">通识教育必修课</li>
+							<li value="09">学科基础课</li>
+							<li value="10">实践教学</li>
+							<li value="11">通识教育课</li>
+							<li value="01">公共课</li>
+							<li value="02">公共基础课</li>
+							<li value="03">专业基础课</li>
+							<li value="04">专业课</li>
+							<li value="05">专业选修课</li>
+							<li value="06">通识教育选修课</li>
 						</ul>
 					</div>
 				</div>
@@ -242,15 +112,9 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-showWay">显示最好成绩<i></i></span>
 						<ul>
-							<li value="2">
-								显示全部成绩
-							</li>
-							<li value="1">
-								显示最好成绩
-							</li>
-							<li value="0">
-								显示最后成绩
-							</li>
+							<li value="2">显示全部成绩</li>
+							<li value="1">显示最好成绩</li>
+							<li value="0">显示最后成绩</li>
 						</ul>
 					</div>
 				</div>
@@ -262,6 +126,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="src/js/score.js"></script>
+	<script type="text/javascript">var type = 'score';</script>
 </body>
 </html>

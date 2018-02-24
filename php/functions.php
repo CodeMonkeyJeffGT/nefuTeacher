@@ -19,9 +19,12 @@ function view($file = '')
 		<link rel="stylesheet" type="text/css" href="src/css/common.css" />
 		<link rel="stylesheet" type="text/css" href="src/css/' . $file . '.css" />
 		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-		<script src="src/js/common.js"></script>
 	';
 	include(ROOT . '/view/' . $file . '.php');
+	echo '
+		<script src="src/js/common.js"></script>
+		<script src="src/js/' . $file . '.js"></script>
+	';
 }
 
 function verdor($file)

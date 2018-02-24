@@ -1,8 +1,15 @@
 var college = 0;
 var rec_grade = '';
 var rec_major = '';
+var historyNow = -1;
+var historyStore = '';
 
 $(function(){
+	try{
+		loadHistory(type, true);
+	}
+	catch(e){
+	}
 	//下拉框
 	$(".c-s-checkspan").bind("click",function(){
 		var ul = $(this).siblings('ul')
@@ -123,6 +130,62 @@ function getDropdown(data = {}, level = 0)
 				$('#control-class').html('全部<i></i>');
 				$('#control-class').parent().find('ul').find('li').eq(0).css('background-color', 'rgb(240, 255, 255)');
 			}
+		},
+		"error": function(err){
+			console.log(err);
+		}
+	});
+}
+
+function loadHistory(type, loop = false, id = false){
+	if(id != false)
+	{
+		historyNow = id;
+	}
+	var data = {
+		"type": type
+	};
+	$.ajax({
+		"url": "?c=history",
+		"method": "post",
+		"data": data,
+		"dataType": "json",
+		"success": function(result){
+			if(result.code == 1)
+			{
+				alert(result.message);
+				return;
+			}
+			else if(result.code == 2)
+			{
+				window.location.reload();
+				return;
+			}
+			result = result.data;
+			var str = JSON.stringify(result);
+			if(loop){
+				setTimeout(function(){loadHistory(type, true)}, 1000);
+			}
+			if(historyStore == str){
+				return;
+			}
+			console.log('刷新');
+			historyStore = str;
+			if(result.length == 0)
+			{
+				return;
+			}
+			var str = '';
+			for(var i in result){
+				var tstr = '<div class="history-element';
+				if(result[i].id == historyNow)
+				{
+					tstr += ' history-selected';
+				}
+				tstr += '"><div class="history-ele-title">' + result[i].title + '</div><span class="history-ele-time">' + result[i].time + '</span> <span class="history-ele-status h-e-s-' + (result[i].status == 0 ? 'done' : result[i].status == 1 ? 'doing' : 'fail') + '"></span></div>';
+				str = tstr + str;
+			}
+			$('.history-content').html(str);
 		},
 		"error": function(err){
 			console.log(err);
