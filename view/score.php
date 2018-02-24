@@ -44,7 +44,7 @@
 							17-软件-4-17上-通-高-谷
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-done">
 						</span>
@@ -54,7 +54,7 @@
 							17-软件-4-17上-通
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-doing">
 						</span>
@@ -64,7 +64,7 @@
 							17-软件-4-17上-通
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-fail">
 						</span>
@@ -74,7 +74,7 @@
 							17-软件-4-17上-通-高-谷
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-done">
 						</span>
@@ -84,7 +84,7 @@
 							17-软件-4-17上-通-高-谷
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-done">
 						</span>
@@ -94,7 +94,7 @@
 							17-软件-4-17上-通-高-谷
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-done">
 						</span>
@@ -104,7 +104,7 @@
 							17-软件-4-17上-通-高-谷
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-done">
 						</span>
@@ -114,7 +114,7 @@
 							17-软件-4-17上-通-高-谷
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-done">
 						</span>
@@ -124,7 +124,7 @@
 							17-软件-4-17上-通-高-谷
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-done">
 						</span>
@@ -134,7 +134,7 @@
 							17-软件-4-17上-通-高-谷
 						</div>
 						<span class="history-ele-time">
-							2018.2.23 16:22
+							2018.02.23 16:22
 						</span>
 						<span class="history-ele-status h-e-s-done">
 						</span>
