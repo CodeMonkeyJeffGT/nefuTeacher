@@ -3,7 +3,7 @@
 	<title>知派教师端 - 登录</title>
 </head>
 <body>
-	<table class="platform"><tr class="platform"><td class="platform"><div class="login">
+	<table class="ptable"><tr class="ptable"><td class="ptable"><div class="login">
 		<div class="login-title">知 派</div>
 		<div class="login-label">教&nbsp;&nbsp;&nbsp;&nbsp;师&nbsp;&nbsp;&nbsp;&nbsp;端</div>
 		<form class="login-area" onsubmit="return false;">
