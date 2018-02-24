@@ -25,6 +25,15 @@ class User extends Base{
 		else
 		{
 			mkdir(ROOT . '/store/teacher/' . $account);
+			chmod(ROOT . '/store/teacher/' . $account, 0777);
+			mkdir(ROOT . '/store/teacher/' . $account . '/score');
+			chmod(ROOT . '/store/teacher/' . $account . '/score', 0777);
+			file_put_contents(ROOT . '/store/teacher/' . $account . '/score/history', '[]');
+			chmod(ROOT . '/store/teacher/' . $account . '/score/history', 0666);
+			mkdir(ROOT . '/store/teacher/' . $account . '/student');
+			chmod(ROOT . '/store/teacher/' . $account . '/student', 0777);
+			file_put_contents(ROOT . '/store/teacher/' . $account . '/student/history', '[]');
+			chmod(ROOT . '/store/teacher/' . $account . '/student/history', 0666);
 			$info = $nefuer->userinfo();
 			if (false == $info) 
 			{
@@ -34,6 +43,7 @@ class User extends Base{
 		$info['account'] = $account;
 		$info['password'] = $password;
 		file_put_contents($location . '.store', json_encode($info));
+		chmod($location . '.store', 0666);
 		$_SESSION['teacher']['account'] = $account;
 		$_SESSION['teacher']['password'] = $password;
 		$_SESSION['teacher']['cookie'] = $nefuer->getCookie();

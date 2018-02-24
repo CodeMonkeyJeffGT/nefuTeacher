@@ -22,7 +22,7 @@
 					$hour = '5';
 				}
 				$sentences = array('早上好','上午好','中午好','下午好','晚上好','夜深了');
-				$css = array('sunrise','sun','sun','tea','moon','sleep');
+				$css = array('sunrise','sun','noon','tea','moon','sleep');
 				?>
 				<div class="userinfo-name"><?=$sentences[$hour]?>，<?= mb_substr($_SESSION['teacher']['name'], 0, 1) ?>老师 <div class="userinfo-img img-<?=$css[$hour]?>"></div></div>
 				<div class="userinfo-college"><?=$_SESSION['teacher']['college']?>学院</div>
@@ -76,10 +76,96 @@
 						</ul>
 					</div>
 				</div>
+				<div class="control-element">
+					<label class="control-label">政治面貌</label>
+					<div class="control-select">
+						<span class="c-s-checkspan" id="control-zzmm">全部<i></i></span>
+						<ul>
+							<li value="">
+								全部
+							</li>
+							<li value="01">
+								中国党员
+							</li>
+							<li value="02">
+								中国预备党员
+							</li>
+							<li value="03">
+								共青团员
+							</li>
+							<li value="13">
+								群众
+							</li>
+							<li value="04">
+								中国国民党革命委员会会
+							</li>
+							<li value="05">
+								中国民主同盟盟员
+							</li>
+							<li value="06">
+								中国民主建国会会员
+							</li>
+							<li value="07">
+								中国民主促进会会员
+							</li>
+							<li value="08">
+								中国农工民主党党员
+							</li>
+							<li value="09">
+								中国致公党党员
+							</li>
+							<li value="10">
+								九三学社社员
+							</li>
+							<li value="11">
+								台湾民主自治同盟盟员
+							</li>
+							<li value="12">
+								无党派人士
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="control-element">
+					<label class="control-label">性别</label>
+					<div class="control-select">
+						<span class="c-s-checkspan" id="control-sex">全部<i></i></span>
+						<ul>
+							<li value="">
+								全部
+							</li>
+							<li value="1">
+								男
+							</li>
+							<li value="2">
+								女
+							</li>
+							<li value="9">
+								未说明的性别
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="control-element">
+					<label class="control-label">学号</label>
+					<input class="control-input" type-"text" id="control-number" />
+				</div>
+				<div class="control-element">
+					<label class="control-label">姓名</label>
+					<input class="control-input" type-"text" id="control-name" />
+				</div>
+				<div class="control-element">
+					<label class="control-label">身份证号</label>
+					<input class="control-input" type-"text" id="control-id" />
+				</div>
+				<div class="control-element">
+					<div class="control-btn">搜索</div>
+				</div>
 			</div>
 			<div class="operator-show">
 			</div>
 		</div>
 	</div>
+	<script src="src/js/student.js"></script>
 </body>
 </html>

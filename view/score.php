@@ -38,7 +38,108 @@
 				<?php } ?>
 			</div>
 			<div class="menu-history">
-				<div>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br></div>
+				<div class="history-content">
+					<div class="history-element history-selected">
+						<div class="history-ele-title">
+							17-软件-4-17上-通-高-谷
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-done">
+						</span>
+					</div>
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-doing">
+						</span>
+					</div>
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-fail">
+						</span>
+					</div>
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通-高-谷
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-done">
+						</span>
+					</div>
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通-高-谷
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-done">
+						</span>
+					</div>
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通-高-谷
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-done">
+						</span>
+					</div>
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通-高-谷
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-done">
+						</span>
+					</div>
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通-高-谷
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-done">
+						</span>
+					</div>
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通-高-谷
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-done">
+						</span>
+					</div>
+					<div class="history-element">
+						<div class="history-ele-title">
+							17-软件-4-17上-通-高-谷
+						</div>
+						<span class="history-ele-time">
+							2018.2.23 16:22
+						</span>
+						<span class="history-ele-status h-e-s-done">
+						</span>
+					</div>
+				</div>	
 			</div>
 		</div>
 		<div class="operator">
@@ -161,5 +262,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="src/js/score.js"></script>
 </body>
 </html>

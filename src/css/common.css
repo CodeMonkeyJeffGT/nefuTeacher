@@ -17,7 +17,6 @@ body{
 	margin-right: 10px;
 	top: 10px;
 	bottom: 10px;
-	overflow-y: auto;
 }
 .menu-menu{
 	background-color: #fff;
@@ -34,6 +33,8 @@ body{
 	background-color: #fff;
 	box-shadow: 0 1px 3px rgba(26,26,26,.1);
 	width: 100%;
+	height: 550px;
+	overflow: hidden;
 	margin-top: 10px;
 }
 .userinfo-img{
@@ -88,6 +89,60 @@ body{
 }
 .menu-ele-select:hover{
 	background-color: rgb(245, 245, 245);
+}
+.history-content{
+	height: 100%;
+	width: 220px;
+	overflow-y: auto;
+}
+.history-element{
+	width: 160px;
+	padding: 13px 15px;
+	overflow: hidden;
+	color: rgb(120, 120, 120);
+	cursor: pointer;
+}
+.history-element:hover{
+	background-color: rgb(252, 252, 252);
+	color: rgb(80, 80, 80);
+}
+.history-selected{
+	background-color: rgb(245, 245, 245);
+	cursor: default;
+	color: rgb(80, 80, 80);
+}
+.history-selected:hover{
+	background-color: rgb(245, 245, 245);
+}
+.history-ele-title{
+	font-size: 13px;
+}
+.history-ele-time{
+	font-size: 15px;
+}
+.history-ele-status{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+.history-ele-status:after{
+	font-size: 12px;
+	padding: 1px 4px;
+}
+.h-e-s-done:after{
+	content: "已完成";
+	color: gray;
+	background-color: #88eeff;
+}
+.h-e-s-doing:after{
+	content: "搜索中";
+	color: gray;
+	background-color: lightgreen;
+}
+.h-e-s-fail:after{
+	content: "失败";
+	color: gray;
+	background-color: pink;
 }
 .operator{
 	position: relative;
