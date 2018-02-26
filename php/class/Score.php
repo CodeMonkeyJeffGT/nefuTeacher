@@ -7,14 +7,16 @@ class Score extends Base{
 	}
 
 	public function start(){
-		$grade = ele($_POST, 'grade', '');
-		$major = ele($_POST, 'major', '');
-		$class = ele($_POST, 'class', '');
-		$term = ele($_POST, 'term', '');
-		$type = ele($_POST, 'type', '');
-		$lesson = ele($_POST, 'lesson', '');
-		$student = ele($_POST, 'student', '');
-		$showWay = ele($_POST, 'showWay', '');
+		$data = array(
+			'' => ele($_POST, 'grade', ''),
+			'' => ele($_POST, 'major', ''),
+			'' => ele($_POST, 'class', ''),
+			'' => ele($_POST, 'term', ''),
+			'' => ele($_POST, 'type', ''),
+			'' => ele($_POST, 'lesson', ''),
+			'' => ele($_POST, 'student', ''),
+			'' => ele($_POST, 'showWay', ''),
+		);
 		$title = ele($_POST, 'title', '');
 		$time = date('Y-m-d H:i', time());
 		$teacher = $_SESSION['teacher']['account'];
@@ -39,10 +41,6 @@ class Score extends Base{
 			'time' => $time,
 			'status' => 1,
 		));
-	}
-
-	public function info(){
-		$this->success($_POST);
 	}
 
 	public function operate_auto(){

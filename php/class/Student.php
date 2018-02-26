@@ -2,20 +2,21 @@
 
 class Student extends Base{ 
 
-	public function index()
-	{
+	public function index(){
 		view('student');
 	}
 
 	public function start(){
-		$grade = ele($_POST, 'grade', '');
-		$major = ele($_POST, 'major', '');
-		$class = ele($_POST, 'class', '');
-		$zzmm = ele($_POST, 'zzmm', '');
-		$sex = ele($_POST, 'sex', '');
-		$number = ele($_POST, 'number', '');
-		$name = ele($_POST, 'name', '');
-		$id = ele($_POST, 'id', '');
+		$data = array(
+			'' => ele($_POST, 'grade', ''),
+			'' => ele($_POST, 'major', ''),
+			'' => ele($_POST, 'class', ''),
+			'' => ele($_POST, 'zzmm', ''),
+			'' => ele($_POST, 'sex', ''),
+			'' => ele($_POST, 'number', ''),
+			'' => ele($_POST, 'name', ''),
+			'' => ele($_POST, 'id', ''),
+		);
 		$title = ele($_POST, 'title', '');
 		$time = date('Y-m-d H:i', time());
 		$teacher = $_SESSION['teacher']['account'];
@@ -40,10 +41,6 @@ class Student extends Base{
 			'time' => $time,
 			'status' => 1,
 		));
-	}
-
-	public function info(){
-		$this->success($_POST);
 	}
 
 	public function operate_auto(){
