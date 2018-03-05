@@ -49,9 +49,7 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-grade">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
+							<li value="">全部</li>
 						</ul>
 					</div>
 				</div>
@@ -60,9 +58,7 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-major">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
+							<li value="">全部</li>
 						</ul>
 					</div>
 				</div>
@@ -71,9 +67,7 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-class">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
+							<li value="">全部</li>
 						</ul>
 					</div>
 				</div>
@@ -82,48 +76,20 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-zzmm">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
-							<li value="01">
-								中国党员
-							</li>
-							<li value="02">
-								中国预备党员
-							</li>
-							<li value="03">
-								共青团员
-							</li>
-							<li value="13">
-								群众
-							</li>
-							<li value="04">
-								中国国民党革命委员会会
-							</li>
-							<li value="05">
-								中国民主同盟盟员
-							</li>
-							<li value="06">
-								中国民主建国会会员
-							</li>
-							<li value="07">
-								中国民主促进会会员
-							</li>
-							<li value="08">
-								中国农工民主党党员
-							</li>
-							<li value="09">
-								中国致公党党员
-							</li>
-							<li value="10">
-								九三学社社员
-							</li>
-							<li value="11">
-								台湾民主自治同盟盟员
-							</li>
-							<li value="12">
-								无党派人士
-							</li>
+							<li value="">全部</li>
+							<li value="01">中国党员</li>
+							<li value="02">中国预备党员</li>
+							<li value="03">共青团员</li>
+							<li value="13">群众</li>
+							<li value="04">中国国民党革命委员会会</li>
+							<li value="05">中国民主同盟盟员</li>
+							<li value="06">中国民主建国会会员</li>
+							<li value="07">中国民主促进会会员</li>
+							<li value="08">中国农工民主党党员</li>
+							<li value="09">中国致公党党员</li>
+							<li value="10">九三学社社员</li>
+							<li value="11">台湾民主自治同盟盟员</li>
+							<li value="12">无党派人士</li>
 						</ul>
 					</div>
 				</div>
@@ -132,18 +98,10 @@
 					<div class="control-select">
 						<span class="c-s-checkspan" id="control-sex">全部<i></i></span>
 						<ul>
-							<li value="">
-								全部
-							</li>
-							<li value="1">
-								男
-							</li>
-							<li value="2">
-								女
-							</li>
-							<li value="9">
-								未说明的性别
-							</li>
+							<li value=
+							<li value="1">男</li>
+							<li value="2">女</li>
+							<li value="9">未说明的性别</li>
 						</ul>
 					</div>
 				</div>
