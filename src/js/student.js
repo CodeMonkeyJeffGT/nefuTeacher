@@ -9,6 +9,14 @@ $(function(){
 			"number": $('#control-number').val(),
 			"name": $('#control-name').val(),
 			"id": $('#control-id').val(),
+			"gradeV": $('#control-grade').html(),
+			"majorV": $('#control-major').html(),
+			"classV": $('#control-class').html(),
+			"zzmmV": $('#control-zzmm').html(),
+			"sexV": $('#control-sex').html(),
+			"numberV": $('#control-number').val(),
+			"nameV": $('#control-name').val(),
+			"idV": $('#control-id').val(),
 		};
 		var title = (data.grade == '' ? '' : '-' + data.grade.substr(2, 2))
 			+ (data.major == '' ? '' : '-' + $('#control-major').html())

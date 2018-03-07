@@ -10,6 +10,14 @@ $(function(){
 			"lesson": $('#control-lesson').val(),
 			"student": $('#control-student').val(),
 			"showWay": $('#control-showWay').val(),
+			"gradeV": $('#control-grade').html(),
+			"majorV": $('#control-major').html(),
+			"classV": $('#control-class').html(),
+			"termV": $('#control-term').html(),
+			"typeV": $('#control-type').html(),
+			"lessonV": $('#control-lesson').val(),
+			"studentV": $('#control-student').val(),
+			"showWayV": $('#control-showWay').html(),
 		};
 		var title = (data.grade == '' ? '' : '-' + data.grade.substr(2, 2))
 			+ (data.major == '' ? '' : '-' + $('#control-major').html())

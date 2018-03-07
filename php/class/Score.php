@@ -8,6 +8,54 @@ class Score extends Base{
 
 	public function start(){
 		$data = array(
+			'grade' => ele($_POST, 'grade', ''),
+			'major' => ele($_POST, 'major', ''),
+			'class' => ele($_POST, 'class', ''),
+			'term' => ele($_POST, 'term', ''),
+			'type' => ele($_POST, 'type', ''),
+			'lesson' => ele($_POST, 'lesson', ''),
+			'student' => ele($_POST, 'student', ''),
+			'showWay' => ele($_POST, 'showWay', ''),
+		);
+		$dataV = array(
+			'grade' => str_replace('<i></i>', '', ele($_POST, 'gradeV', '')),
+			'major' => str_replace('<i></i>', '', ele($_POST, 'majorV', '')),
+			'class' => str_replace('<i></i>', '', ele($_POST, 'classV', '')),
+			'term' => str_replace('<i></i>', '', ele($_POST, 'termV', '')),
+			'type' => str_replace('<i></i>', '', ele($_POST, 'typeV', '')),
+			'lesson' => ele($_POST, 'lessonV', ''),
+			'student' => ele($_POST, 'studentV', ''),
+			'showWay' => str_replace('<i></i>', '', ele($_POST, 'showWayV', '')),
+		);
+		$title = ele($_POST, 'title', '');
+		$time = date('Y-m-d H:i', time());
+		$teacher = $_SESSION['teacher']['account'];
+		$history_dir = ROOT . '/store/teacher/' . $teacher . '/score/';
+		$history = json_decode(file_get_contents($history_dir . 'history'), true);
+		$id = count($history) == 0 ? 0 : $history[count($history) - 1]['id'] + 1;
+		$info = array(
+			'id' => $id,
+			'title' => $title,
+			'time' => $time,
+			'status' => 1,
+			'data' => $data,
+			'dataV' => $dataV,
+		);
+		$history[] = $info;
+		file_put_contents($history_dir . 'history', json_encode($history));
+		file_put_contents($history_dir . $id,json_encode(array('info' => $info, 'detail' => [])));
+		$url = 'http://' . $_SERVER['SERVER_NAME'] . '/?c=score&f=operate_auto'; 
+		$data['id'] = $id;
+		$this->doRequest($url, $data);
+		$this->success(array(
+			'id' => $id,
+		));
+	}
+
+	public function operate_auto(){
+		ignore_user_abort(true);
+		set_time_limit(0);
+		$data = array(
 			'' => ele($_POST, 'grade', ''),
 			'' => ele($_POST, 'major', ''),
 			'' => ele($_POST, 'class', ''),
@@ -17,35 +65,12 @@ class Score extends Base{
 			'' => ele($_POST, 'student', ''),
 			'' => ele($_POST, 'showWay', ''),
 		);
-		$title = ele($_POST, 'title', '');
-		$time = date('Y-m-d H:i', time());
-		$teacher = $_SESSION['teacher']['account'];
-		$history_dir = ROOT . '/store/teacher/' . $teacher . '/score/';
-		$history = json_decode(file_get_contents($history_dir . 'history'), true);
-		$id = count($history) == 0 ? 0 : $history[count($history) - 1]['id'] + 1;
-		$history[] = array(
-			'id' => $id,
-			'title' => $title,
-			'time' => $time,
-			'status' => 1,
-		);
-		file_put_contents($history_dir . 'history', json_encode($history));
-		file_put_contents($history_dir . $id, '');
-		$url = 'http://' . $_SERVER['SERVER_NAME'] . '/?c=score&f=operate_auto'; 
-		$param = array(
-		);
-		$this->doRequest($url, $param);
-		$this->success(array(
-			'id' => $id,
-			'title' => $title,
-			'time' => $time,
-			'status' => 1,
-		));
-	}
+		$id = ele($_POST, 'id', false);
+		if (false === $id) {
+			$this->error('非法访问');
+		}
+		$floor = ele($_POST, 'floor', 0);
 
-	public function operate_auto(){
-		ignore_user_abort(true);
-		set_time_limit(0);
 	}
 
 	public function info(){
@@ -56,63 +81,5 @@ class Score extends Base{
 		}
 		$info = file_get_contents(ROOT . '/store/teacher/' . $teacher . '/score/' . $id);
 		$this->success(json_decode($info, true));
-	}
-
-	public function remove(){
-		$id = ele($_POST, 'id');
-		if(is_null($id))
-			$this->error('请指定id');
-		$teacher = $_SESSION['teacher']['account'];
-		$file = ROOT . '/store/teacher/' . $teacher . '/score/' . $id;
-		unset($file);
-		$history = json_decode(file_get_contents(ROOT . '/store/teacher/' . $teacher . '/score/history'), true);
-		foreach ($history as $key => $value) {
-			if($value['id'] == $id)
-			{
-				unset($history[$key]);
-				break;
-			}
-		}
-		file_put_contents(ROOT . '/store/teacher/' . $teacher . '/score/history', json_encode($history));
-	}
-
-	public function getDropdown(){
-		$college = ele($_POST, 'college', '');
-		$grade = ele($_POST, 'grade', '');
-		$major = ele($_POST, 'major', '');
-		$data = array(
-			'xsyx' => $college,
-			'xsnj' => $grade,
-			'xszy' => $major,
-		);
-		$stepInfo = $this->nefuer->getStepInfo($data);
-		$stepInfo['college'] = $stepInfo['college'][$_SESSION['teacher']['college'] . '学院'];
-		if(false === $stepInfo)
-			$this->goLogin();
-		else
-			$this->success($stepInfo);
-	}
-
-	private function doRequest($url, $param){
-		$urlinfo = parse_url($url);
-		$host = $urlinfo['host'];
-		$path = $urlinfo['path'];
-		$query = http_build_query($param);
-		$port = 80;
-		$errno = 0;
-		$errstr = '';
-		$timeout = 10;
-
-		$fp = fsockopen($host, $port, $errno, $errstr, $timeout);
-
-		$out = "POST ".$path." HTTP/1.1\r\n";
-		$out .= "host:".$host."\r\n"; 
-		$out .= "content-length:".strlen($query)."\r\n"; 
-		$out .= "content-type:application/x-www-form-urlencoded\r\n"; 
-		$out .= "connection:close\r\n\r\n"; 
-		$out .= $query;
-
-		fputs($fp, $out); 
-		fclose($fp);
 	}
 }

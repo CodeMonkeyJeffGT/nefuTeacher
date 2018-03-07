@@ -3,6 +3,7 @@ var rec_grade = '';
 var rec_major = '';
 var historyNow = -1;
 var historyStore = '';
+var changeFlag = false;
 
 $(function(){
 	try{
@@ -45,6 +46,9 @@ $(function(){
 			var grade = $('#control-grade').val();
 			if(grade != rec_grade)
 			{
+				if(changeFlag){
+					return;
+				}
 				rec_grade = grade;
 				rec_major = '';
 				var data = {
@@ -58,6 +62,9 @@ $(function(){
 			var major = $('#control-major').val();
 			if(major != rec_major)
 			{
+				if(changeFlag){
+					return;
+				}
 				rec_major = major;
 				var data = {
 					'college': college,
@@ -151,6 +158,31 @@ function loadHistory(type, loop = false, id = false){
 			"dataType": 'json',
 			"success": function(result){
 				console.log(result);
+				if(result.code == 1)
+				{
+					alert(result.message);
+					return;
+				}
+				else if(result.code == 2)
+				{
+					window.location.reload();
+					return;
+				}
+				result = result.data;
+				var info = result.info.data;
+				var infoV = result.info.dataV;
+				changeFlag = true;
+				$.each(info, function(key, value){
+					$('#control-' + key).val(value);
+				});
+				$.each(infoV, function(key, value){
+					if(value == ''){
+						$('#control-' + key).html('全部<i></i>');
+					} else {
+						$('#control-' + key).html(value + '<i></i>');
+					}
+				});
+				changeFlag = false;
 			},
 			"error": function(err){
 				console.log(err);
