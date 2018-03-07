@@ -48,10 +48,21 @@ class Student extends Base{
 		set_time_limit(0);
 	}
 
+	public function info(){
+		$id = ele($_POST, 'id');
+		$teacher = $_SESSION['teacher']['account'];
+		if ( ! is_file(ROOT . '/store/teacher/' . $teacher . '/student/' . $id)) {
+			$this->error('记录不存在');
+		}
+		$info = file_get_contents(ROOT . '/store/teacher/' . $teacher . '/student/' . $id);
+		$this->success(json_decode($info, true));
+	}
+
 	public function remove(){
 		$id = ele($_POST, 'id');
 		if(is_null($id))
 			$this->error('请指定id');
+		$teacher = $_SESSION['teacher']['account'];
 		$file = ROOT . '/store/teacher/' . $teacher . '/student/' . $id;
 		unset($file);
 		$history = json_decode(file_get_contents(ROOT . '/store/teacher/' . $teacher . '/student/history'), true);
@@ -63,7 +74,7 @@ class Student extends Base{
 			}
 		}
 		file_put_contents(ROOT . '/store/teacher/' . $teacher . '/student/history', json_encode($history));
-	}
+	} 
 
 	public function getDropdown(){
 		$college = ele($_POST, 'college', '');

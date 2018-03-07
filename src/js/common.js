@@ -138,9 +138,24 @@ function getDropdown(data = {}, level = 0)
 }
 
 function loadHistory(type, loop = false, id = false){
-	if(id != false)
+	if(id !== false)
 	{
 		historyNow = id;
+		var data = {
+			"id": historyNow,
+		};
+		$.ajax({
+			"url": "?c=" + type + "&f=info",
+			"method": "post",
+			"data": data,
+			"dataType": 'json',
+			"success": function(result){
+				console.log(result);
+			},
+			"error": function(err){
+				console.log(err);
+			}
+		});
 	}
 	var data = {
 		"type": type
@@ -188,22 +203,7 @@ function loadHistory(type, loop = false, id = false){
 			$('.history-element').on('click', function(){
 				$('.history-selected').removeClass('history-selected');
 				$(this).addClass('history-selected');
-				historyNow = $(this).attr('value');
-				var data = {
-					"id": historyNow,
-				};
-				$.ajax({
-					"url": "?c=" + type + "&f=info",
-					"method": "post",
-					"data": data,
-					"dataType": 'json',
-					"success": function(result){
-						console.log(result);
-					},
-					"error": function(err){
-						console.log(err);
-					}
-				});
+				loadHistory(type, false, $(this).attr('value'));
 			});
 		},
 		"error": function(err){

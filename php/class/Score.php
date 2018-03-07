@@ -48,10 +48,21 @@ class Score extends Base{
 		set_time_limit(0);
 	}
 
+	public function info(){
+		$id = ele($_POST, 'id');
+		$teacher = $_SESSION['teacher']['account'];
+		if ( ! is_file(ROOT . '/store/teacher/' . $teacher . '/score/' . $id)) {
+			$this->error('记录不存在');
+		}
+		$info = file_get_contents(ROOT . '/store/teacher/' . $teacher . '/score/' . $id);
+		$this->success(json_decode($info, true));
+	}
+
 	public function remove(){
 		$id = ele($_POST, 'id');
 		if(is_null($id))
 			$this->error('请指定id');
+		$teacher = $_SESSION['teacher']['account'];
 		$file = ROOT . '/store/teacher/' . $teacher . '/score/' . $id;
 		unset($file);
 		$history = json_decode(file_get_contents(ROOT . '/store/teacher/' . $teacher . '/score/history'), true);
