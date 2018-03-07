@@ -13,18 +13,18 @@ class Base{
 	}
 
 	protected function success($data = array()){
-		$this->return($data, '', 0);
+		$this->apiReturn($data, '', 0);
 	}
 
 	protected function error($message){
-		$this->return(array(), $message, 1);
+		$this->apiReturn(array(), $message, 1);
 	}
 
 	protected function goLogin(){
-		$this->return(array(), '请登录', 2);
+		$this->apiReturn(array(), '请登录', 2);
 	}
 
-	protected function return($data, $message, $code){
+	protected function apiReturn($data, $message, $code){
 		echo json_encode(array(
 			'code' => $code,
 			'data' => $data,
