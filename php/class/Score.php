@@ -64,6 +64,8 @@ class Score extends Base{
 		$this->doRequest($url, $data);
 		$this->success(array(
 			'id' => $id,
+			'url' => $url,
+			'data' => $data,
 		));
 	}
 
