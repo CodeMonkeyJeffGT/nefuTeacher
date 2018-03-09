@@ -264,6 +264,8 @@ body{
 	width: 198px;
 	position: absolute;
 	z-index: 999;
+	max-height: 500px;
+	overflow: auto;
 }
 .control-select ul,.control-select li{
 	padding: 0;

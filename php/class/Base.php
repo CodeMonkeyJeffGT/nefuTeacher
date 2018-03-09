@@ -2,7 +2,9 @@
 
 class Base{
 
-	protected $nefuer;
+	private $nefuer;
+	protected $autoTime = 20;
+	protected $autoMax = 200;
 	
 	//code
 	//1 常规错误
@@ -15,6 +17,12 @@ class Base{
 		$this->nefuer = $nefuer;
 	}
 
+	protected function nefuerDo($name, $params = null){
+		$result = $this->nefuer->$name($params);
+		$_SESSION['teacher']['cookie'] = $this->nefuer->getCookie();
+		return $result;
+ 	}
+
 	public function getDropdown(){
 		$college = ele($_POST, 'college', '');
 		$grade = ele($_POST, 'grade', '');
@@ -24,7 +32,7 @@ class Base{
 			'xsnj' => $grade,
 			'xszy' => $major,
 		);
-		$stepInfo = $this->nefuer->getStepInfo($data);
+		$stepInfo = $this->nefuerDo('getStepInfo', $data);
 		$stepInfo['college'] = $stepInfo['college'][$_SESSION['teacher']['college'] . '学院'];
 		if (false === $stepInfo) {
 			$this->goLogin();
@@ -55,6 +63,26 @@ class Base{
 			'message' => $message,
 		));
 		die;
+	}
+
+	protected function buildAuto($page, $time){
+		$num = ($page - 1) / ($this->autoTime / $time);
+		if ($num > $this->autoMax) {
+			$num = $this->autoMax;
+		}
+		$num = (int)(($page - 1) / $num);
+		$result = array();
+		for ($i = 2; $i + $num < $page; $i += $num) {
+			$result[] = array(
+				'start' => $i,
+				'end' => $i + $num - 1,
+			);
+		}
+		$result[] = array(
+			'start' => $i,
+			'end' => $page,
+		);
+		return $result;
 	}
 
 	protected function doRequest($url, $param){

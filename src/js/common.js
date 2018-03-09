@@ -177,11 +177,13 @@ function loadHistory(type, loop = false, id = false){
 				});
 				$.each(infoV, function(key, value){
 					if(value == ''){
-						$('#control-' + key).html('全部<i></i>');
+						$('#control-' + key).html('');
 					} else {
-						$('#control-' + key).html(value + '<i></i>');
+						$('#control-' + key).html(value);
 					}
 				});
+				$('#control-major').parent().find('ul').html('<li value="">全部</li>');
+				$('#control-class').parent().find('ul').html('<li value="">全部</li>');
 				changeFlag = false;
 			},
 			"error": function(err){

@@ -17,7 +17,7 @@ if($class == 'V')
 
 session_start();
 //如果 未登录 且 不是登录操作 且 不是自身异步调用
-if(empty($_SESSION['teacher']) && ($class != 'User' || $function != 'login') && $function != 'operate_auto')
+if(empty($_SESSION['teacher']) && ($class != 'User' || $function != 'login') && $function != 'operateAuto')
 {
 	if(empty($_POST))
 	{
@@ -35,5 +35,7 @@ include(ROOT . '/php/class/' . $class . '.php');
 verdor('Nefu');
 $class = new $class();
 if( ! empty($_SESSION['teacher']))
+{
 	$class->setNefuer(Nefu::getInstance($_SESSION['teacher']['account'], $_SESSION['teacher']['password'], $_SESSION['teacher']['cookie']));
+}
 $class->$function();

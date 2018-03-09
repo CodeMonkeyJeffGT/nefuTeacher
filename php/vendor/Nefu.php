@@ -32,34 +32,67 @@ class Nefu
 	public function userinfo()
 	{
         $url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/jsxx/queryjsxxjb.do';
-        $userinfo = $this->curl_safe($url);
+        $userinfo = $this->curlSafe($url);
         if(FALSE === $userinfo)
         	return FALSE;
         else
-        	return $this->html_escape($this->toInfo($userinfo));
+        	return $this->htmlEscape($this->toInfo($userinfo));
 	}
 
 	public function getScores($data){
 		$url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/cjgl/cjzkcx_listxsd.do';
-		$result = $this->curl_safe($url, $data);
+		$result = $this->curlSafe($url, $data);
         if(FALSE === $result)
         	return FALSE;
         else
-        	return $this->html_escape($this->toScores($result));
+        	return $this->htmlEscape($this->toScores($result));
 	}
 
 	public function getStepInfo($data){
 		$url = 'http://jwcnew.nefu.edu.cn/dblydx_jsxsd/cjgl/cjzkcx.do';
-		$result = $this->curl_safe($url, $data);
+		$result = $this->curlSafe($url, $data);
         if(FALSE === $result)
         	return FALSE;
         else
-        	return $this->html_escape($this->toStepInfo($result));
+        	return $this->htmlEscape($this->toStepInfo($result));
 	}
 
 	public function getCookie()
 	{
 		return $this->cookie;
+	}
+
+	private function toScores($page){
+		$preg = '/共(.*?)页&nbsp;\d*条/i';
+		$result = array('detail' => array());
+		preg_match_all($preg, $page, $result['page']);
+		$result['page'] = $result['page'][1][0];
+
+		$preg = '/<tr[^>]*?>([\s\S]*?)<\/tr>/i';
+		preg_match_all($preg, $page, $page);
+		$page = $page[1];
+		$preg = '/<td[^>]*?>([\s\S]*?)<\/td>/i';
+		for ($i = 2, $iLoop = count($page); $i < $iLoop; $i++) {
+			preg_match_all($preg, $page[$i], $tr);
+			$tr = $tr[1];
+			$result['detail'][] = array(
+				'number' => $tr[1],
+				'name' => preg_replace('/<\/*nobr>/i','', $tr[2]),
+				'term' => $tr[3],
+				'class' => $tr[4],
+				'lessonCode' => $tr[5],
+				'lesson' => $tr[6],
+				'score' => $tr[7],
+				'sign' => $tr[8],
+				'type' => $tr[9],
+				'bType' => $tr[10],
+				'num' => $tr[11],
+				'eType' => $tr[12],
+				'rTerm' => $tr[13],
+				'isF' => $tr[14],
+			);
+		}
+		return $result;
 	}
 
 	private function toInfo($page){
@@ -135,7 +168,7 @@ class Nefu
 		return $result;
 	}
 
-	private function curl_safe($url, $data = FALSE)
+	private function curlSafe($url, $data = FALSE)
 	{
 		$result = $this->curl($url, $this->cookie, $data);
 		if(empty(htmlspecialchars($result)))
@@ -159,12 +192,12 @@ class Nefu
 			return $result;
 	}
 
-	private function html_escape($data)
+	private function htmlEscape($data)
 	{
 		if (is_array($data))
 		{
 			foreach ($data as $key => $value) {
-				$data[$key] = $this->html_escape($value);
+				$data[$key] = $this->htmlEscape($value);
 			}
 			return $data;
 		}
@@ -205,14 +238,14 @@ class Nefu
 	    $result = curl_exec($ch);
 		preg_match_all('/Set-Cookie: (.*);/iU', $result, $str); //正则匹配
 	    if( ! empty($str))
-			$cookie = self::comb_cookie($cookie, $str[1]);
+			$cookie = self::combCookie($cookie, $str[1]);
 	    $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
 	    $result = substr($result, $headerSize);
 	    curl_close($ch);
 	    return $result;
 	}
 
-	private static function comb_cookie($str, $arr)
+	private static function combCookie($str, $arr)
 	{
 		$cookie = array();
 		$str = explode('; ', $str);

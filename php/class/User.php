@@ -53,7 +53,7 @@ class User extends Base{
 	}
 
 	public function reload(){
-		$info = $this->nefuer->userinfo();
+		$info = $this->nefuerDo('userinfo');
 		if (false == $info) {
 			$this->goLogin();
 		}

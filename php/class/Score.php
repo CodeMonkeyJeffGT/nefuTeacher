@@ -16,16 +16,17 @@ class Score extends Base{
 			'lesson' => ele($_POST, 'lesson', ''),
 			'student' => ele($_POST, 'student', ''),
 			'showWay' => ele($_POST, 'showWay', ''),
+			'college' => ele($_POST, 'college', ''),
 		);
 		$dataV = array(
-			'grade' => str_replace('<i></i>', '', ele($_POST, 'gradeV', '')),
-			'major' => str_replace('<i></i>', '', ele($_POST, 'majorV', '')),
-			'class' => str_replace('<i></i>', '', ele($_POST, 'classV', '')),
-			'term' => str_replace('<i></i>', '', ele($_POST, 'termV', '')),
-			'type' => str_replace('<i></i>', '', ele($_POST, 'typeV', '')),
+			'grade' => ele($_POST, 'gradeV', ''),
+			'major' => ele($_POST, 'majorV', ''),
+			'class' => ele($_POST, 'classV', ''),
+			'term' => ele($_POST, 'termV', ''),
+			'type' => ele($_POST, 'typeV', ''),
 			'lesson' => ele($_POST, 'lessonV', ''),
 			'student' => ele($_POST, 'studentV', ''),
-			'showWay' => str_replace('<i></i>', '', ele($_POST, 'showWayV', '')),
+			'showWay' => ele($_POST, 'showWayV', ''),
 		);
 		$title = ele($_POST, 'title', '');
 		$time = date('Y-m-d H:i', time());
@@ -44,33 +45,74 @@ class Score extends Base{
 		$history[] = $info;
 		file_put_contents($history_dir . 'history', json_encode($history));
 		file_put_contents($history_dir . $id,json_encode(array('info' => $info, 'detail' => [])));
-		$url = 'http://' . $_SERVER['SERVER_NAME'] . '/?c=score&f=operate_auto'; 
-		$data['id'] = $id;
+		$url = 'http://' . $_SERVER['SERVER_NAME'] . '/?c=score&f=operateAuto'; 
+		$data = array(
+			'xsyx' => $data['college'],
+			'xsnj' => $data['grade'],
+			'xszy' => $data['major'],
+			'skbj' => $data['class'],
+			'xqmc' => $data['term'],
+			'kcxz' => $data['type'],
+			'kcmc' => $data['lesson'],
+			'xm' => $data['student'],
+			'xsfs' => $data['showWay'],
+			'account' => $_SESSION['teacher']['account'],
+			'password' => $_SESSION['teacher']['password'],
+			'cookie' => $_SESSION['teacher']['cookie'],
+			'id' => $id,
+		);
 		$this->doRequest($url, $data);
 		$this->success(array(
 			'id' => $id,
 		));
 	}
 
-	public function operate_auto(){
+	public function operateAuto(){
 		ignore_user_abort(true);
 		set_time_limit(0);
+		file_put_contents(ROOT . '/store/teacher/' . $teacher . '/score/done' . $id, 'debug');
 		$data = array(
-			'' => ele($_POST, 'grade', ''),
-			'' => ele($_POST, 'major', ''),
-			'' => ele($_POST, 'class', ''),
-			'' => ele($_POST, 'term', ''),
-			'' => ele($_POST, 'type', ''),
-			'' => ele($_POST, 'lesson', ''),
-			'' => ele($_POST, 'student', ''),
-			'' => ele($_POST, 'showWay', ''),
+			'xsyx' => ele($_GET, 'xsyx', ''),
+			'xsnj' => ele($_GET, 'xsnj', ''),
+			'xszy' => ele($_GET, 'xszy', ''),
+			'skbj' => ele($_GET, 'skbj', ''),
+			'xqmc' => ele($_GET, 'xqmc', ''),
+			'kcxz' => ele($_GET, 'kcxz', ''),
+			'kcmc' => ele($_GET, 'kcmc', ''),
+			'xm' => ele($_GET, 'xm', ''),
+			'xsfs' => ele($_GET, 'xsfs', ''),
 		);
-		$id = ele($_POST, 'id', false);
+		$id = ele($_GET, 'id', false);
+		$start = ele($_GET, 'autoStart', null);
+		$end = ele($_GET, 'autoEnd', null);
+		$account = ele($_GET, 'account', null);
+		$password = ele($_GET, 'password', null);
+		$cookie = ele($_GET, 'cookie', null);
 		if (false === $id) {
 			$this->error('非法访问');
 		}
-		$floor = ele($_POST, 'floor', 0);
+		$this->setNefuer(Nefu::getInstance($account, $password, $cookie));
+		if (is_null($start)) { //未分配，首次查询并分配任务
+			$startTime = microtime(true);
+			$info = $this->nefuerDo('getScores', $data);
+			$auto = $this->buildAuto($info['page'], microtime(true) - $startTime);
 
+			$url = 'http://' . $_SERVER['SERVER_NAME'] . '/?c=score&f=operateAuto';
+			$data['id'] = $id;
+			$data['account'] = $account;
+			$data['password'] = $password;
+			$data['cookie'] = $_SESSION['teacher']['cookie'];
+			for ($i = 0, $iLoop = count($auto); $i < $iLoop; $i++) {
+				$data['start'] = $auto[$i]['start'];
+				$data['end'] = $auto[$i]['end'];
+				$this->doRequest($url, $data);
+			}
+		} else { //已分配，执行
+
+			for ($pageIndex = $start; $pageIndex <= $end; $pageIndex++) {
+				$data['pageIndex'] = $pageIndex;
+			}
+		}
 	}
 
 	public function info(){

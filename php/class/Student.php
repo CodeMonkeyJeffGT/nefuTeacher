@@ -16,13 +16,14 @@ class Student extends Base{
 			'number' => ele($_POST, 'number', ''),
 			'name' => ele($_POST, 'name', ''),
 			'id' => ele($_POST, 'id', ''),
+			'college' => ele($_POST, 'college', ''),
 		);
 		$dataV = array(
-			'grade' => str_replace('<i></i>', '', ele($_POST, 'gradeV', '')),
-			'major' => str_replace('<i></i>', '', ele($_POST, 'majorV', '')),
-			'class' => str_replace('<i></i>', '', ele($_POST, 'classV', '')),
-			'zzmm' => str_replace('<i></i>', '', ele($_POST, 'zzmmV', '')),
-			'sex' => str_replace('<i></i>', '', ele($_POST, 'sexV', '')),
+			'grade' => ele($_POST, 'gradeV', ''),
+			'major' => ele($_POST, 'majorV', ''),
+			'class' => ele($_POST, 'classV', ''),
+			'zzmm' => ele($_POST, 'zzmmV', ''),
+			'sex' => ele($_POST, 'sexV', ''),
 			'number' => ele($_POST, 'numberV', ''),
 			'name' => ele($_POST, 'nameV', ''),
 			'id' => ele($_POST, 'idV', ''),
@@ -44,7 +45,7 @@ class Student extends Base{
 		$history[] = $info;
 		file_put_contents($history_dir . 'history', json_encode($history));
 		file_put_contents($history_dir . $id,json_encode(array('info' => $info, 'detail' => [])));
-		$url = 'http://' . $_SERVER['SERVER_NAME'] . '/?c=student&f=operate_auto';
+		$url = 'http://' . $_SERVER['SERVER_NAME'] . '/?c=student&f=operateAuto';
 		$data['id'] = $id;
 		$this->doRequest($url, $data);
 		$this->success(array(
@@ -52,7 +53,7 @@ class Student extends Base{
 		));
 	}
 
-	public function operate_auto(){
+	public function operateAuto(){
 		ignore_user_abort(true);
 		set_time_limit(0);
 		$data = array(

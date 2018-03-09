@@ -10,6 +10,7 @@ $(function(){
 			"lesson": $('#control-lesson').val(),
 			"student": $('#control-student').val(),
 			"showWay": $('#control-showWay').val(),
+			"college": college,
 			"gradeV": $('#control-grade').html(),
 			"majorV": $('#control-major').html(),
 			"classV": $('#control-class').html(),

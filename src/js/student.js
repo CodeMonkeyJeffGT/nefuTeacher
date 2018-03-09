@@ -9,6 +9,7 @@ $(function(){
 			"number": $('#control-number').val(),
 			"name": $('#control-name').val(),
 			"id": $('#control-id').val(),
+			"college": college,
 			"gradeV": $('#control-grade').html(),
 			"majorV": $('#control-major').html(),
 			"classV": $('#control-class').html(),
