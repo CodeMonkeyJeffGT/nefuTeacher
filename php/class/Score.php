@@ -72,22 +72,22 @@ class Score extends Base{
 		set_time_limit(0);
 		file_put_contents(ROOT . '/store/teacher/' . $teacher . '/score/done' . $id, 'debug');
 		$data = array(
-			'xsyx' => ele($_GET, 'xsyx', ''),
-			'xsnj' => ele($_GET, 'xsnj', ''),
-			'xszy' => ele($_GET, 'xszy', ''),
-			'skbj' => ele($_GET, 'skbj', ''),
-			'xqmc' => ele($_GET, 'xqmc', ''),
-			'kcxz' => ele($_GET, 'kcxz', ''),
-			'kcmc' => ele($_GET, 'kcmc', ''),
-			'xm' => ele($_GET, 'xm', ''),
-			'xsfs' => ele($_GET, 'xsfs', ''),
+			'xsyx' => ele($_POST, 'xsyx', ''),
+			'xsnj' => ele($_POST, 'xsnj', ''),
+			'xszy' => ele($_POST, 'xszy', ''),
+			'skbj' => ele($_POST, 'skbj', ''),
+			'xqmc' => ele($_POST, 'xqmc', ''),
+			'kcxz' => ele($_POST, 'kcxz', ''),
+			'kcmc' => ele($_POST, 'kcmc', ''),
+			'xm' => ele($_POST, 'xm', ''),
+			'xsfs' => ele($_POST, 'xsfs', ''),
 		);
-		$id = ele($_GET, 'id', false);
-		$start = ele($_GET, 'autoStart', null);
-		$end = ele($_GET, 'autoEnd', null);
-		$account = ele($_GET, 'account', null);
-		$password = ele($_GET, 'password', null);
-		$cookie = ele($_GET, 'cookie', null);
+		$id = ele($_POST, 'id', false);
+		$start = ele($_POST, 'autoStart', null);
+		$end = ele($_POST, 'autoEnd', null);
+		$account = ele($_POST, 'account', null);
+		$password = ele($_POST, 'password', null);
+		$cookie = ele($_POST, 'cookie', null);
 		if (false === $id) {
 			$this->error('非法访问');
 		}
