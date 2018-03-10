@@ -123,6 +123,33 @@
 				</div>
 			</div>
 			<div class="operator-show">
+			<!-- --------------------------------------------------------- -->
+				<div class="operator-show-up">
+					<span class="o-s-up-message">正在为您加载...</span>
+					<button class="o-s-up-cancle">取消加载</button>
+					<button class="o-s-up-print">打印成绩单</button>
+					<button class="o-s-up-close">关闭此页面</button>
+				</div>
+				<div class="operator-show-down">
+					<table class="o-s-d-table" cellspacing="0" cellpadding="0">
+						<thead>
+							<tr>
+								<th>姓名</th>
+								<th>年龄</th>
+								<th>姓名</th>
+								<th>年龄</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>唯物</td>
+								<td>主义</td>
+								<td>唯物</td>
+								<td>主义</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>
