@@ -126,8 +126,8 @@
 				<div class="operator-show-up">
 					<span class="o-s-up-message">正在为您加载...</span>
 					<button class="o-s-up-cancle">取消加载</button>
-					<button class="o-s-up-print">打印学生信息</button>
-					<button class="o-s-up-close">关闭此页面</button>
+					<button class="o-s-up-print">导出Excel</button>
+					<button class="o-s-up-close">删除此记录</button>
 				</div>
 				<div class="operator-show-down">
 					<div class="o-s-d-thead">
