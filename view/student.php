@@ -121,7 +121,16 @@
 					<div class="control-btn">搜索</div>
 				</div>
 			</div>
+			<!-- ---------------------------------------------------- -->
 			<div class="operator-show">
+				<div class="operator-show-container">
+					<table class="o-s-c-table" cellspacing="0" cellpadding="0">
+						<tr>
+							<th>姓名</th>
+							<td>王诚</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -10,75 +10,115 @@
 }
 /* 取消按钮 */
 .o-s-up-cancle{
+    display: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 100px;
-    width: 198px;
+    width: 120px;
     height: 25px;
-    background-color: #0084ff;
+    background-color:#e6a23c;
     border: none;
     text-align: center;
     color: white;
     letter-spacing: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #aaa;
+    font-weight: bold;
+    outline:none;
+    transition: all 0.5s ease-in-out;
+}
+.o-s-up-cancle::first-letter{
+    margin-left: 5px;
+}
+.o-s-up-cancle:hover{
+    transition: all 0.5s ease-in-out;
+    height: 35px;
 }
 /* 打印按钮 */
 .o-s-up-print{
-    display: none;
+    /* display: none; */
     position: absolute;
     right: 280px;
     width: 150px;
     height: 25px;
-    background-color:  #0084ff;
+    background-color:  #45f1a1;
+    border-radius: 5px;
+    outline:none;
+    box-shadow: 0px 0px 3px #aaa;
     border: none;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     color: white;
+    transition: all 0.5s ease-in-out;
+}
+.o-s-up-print:hover{
+    transition: all 0.5s ease-in-out;
+    height: 35px;
 }
 /* 关闭按钮 */
 .o-s-up-close{
-    display: none;
+    /* display: none; */
     position: absolute;
     right: 80px;
     width: 150px;
     height: 25px;
     background-color:  #0084ff;
+    border-radius: 5px;
+    outline:none;
+    box-shadow: 0px 0px 3px #aaa;
     border: none;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     color: white;
+    transition: all 0.5s ease-in-out;
 }
+.o-s-up-close:hover{
+    transition: all 0.5s ease-in-out;
+    height: 35px;
+}
+
+
 .operator-show-down{
     margin: 25px auto;
     margin-top: 0;
     width: 95%;
     height: 405px;
-    overflow: scroll;
-    border: 1px solid  violet;
+    /* overflow: auto; */
 }
-.operator-show-down::-webkit-scrollbar{
-    display: none;
+.o-s-d-box2{
+    width: 950px;
+    height: 355px;
+    overflow: auto;
 }
 /* 表格 */
 .o-s-d-table{
     border: none;
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 0 10px;
 }
 .o-s-d-table th{
-    border-bottom: 1px solid rgb(212, 205, 205);
+    border-bottom: 1px solid #909399;
     height: 50px;
     padding: 0;
     text-align: left;
+    margin: 0 auto;
 }
 .o-s-d-table td{
-    border-bottom: 1px solid rgb(224, 219, 219);
+    border-bottom: 1px solid #909399;
     height: 40px;
+    font-family: "Microsoft YaHei"
 }
-.o-s-d-table tr:hover{
-    background-color: rgb(218, 216, 216);
+.o-s-d-table tr:nth-child(2n){
+    padding-top: 100px;  
+}
+.o-s-d-table tr:nth-child(3n){
+    background: #f6f6f6;    
+}
+.o-s-d-table tbody tr:hover{
+    background-color: rgb(195, 236, 241);
 }

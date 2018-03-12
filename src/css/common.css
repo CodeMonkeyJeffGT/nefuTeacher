@@ -1,13 +1,18 @@
+*{
+	font-family: "Microsoft YaHei"
+}
 html,body{
 	margin: 0;
 	width: 100%;
 	height: 100%;
+	
 }
 body{
 	background-image: url('../img/bc.png');
 	background-size: cover;
 	background-color: #EFF5FA;
 }
+
 .platform{
 	margin: auto;
 	width: 1200px;
