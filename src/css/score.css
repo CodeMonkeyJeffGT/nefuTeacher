@@ -87,15 +87,74 @@
     margin-top: 0;
     width: 95%;
     height: 405px;
-    /* overflow: auto; */
 }
-.o-s-d-box2{
-    width: 950px;
+.o-s-d-thead{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #909399;
+    font-size: 17px;
+    font-weight: bold;
+}
+.o-s-d-thead li{
+    display: block;
+    list-style: none;
+    float: left;
+    line-height: 50px;
+    width: 110px;
+    height: 50px;
+    overflow: auto;
+}
+.o-s-d-thead li::-webkit-scrollbar {
+    display: none;
+}
+.o-s-d-thead .shortLi{
+    width: 65px;
+}
+.o-s-d-thead li:nth-child(1){
+    margin-left: 19px;
+}
+
+.o-s-d-tbody-container{
+    width: 100%;
     height: 355px;
     overflow: auto;
 }
+.o-s-d-tbody-container div:nth-child(3n){
+    background: #f6f6f6;  
+}
+.o-s-d-tbody{
+    font-size: 12px;
+    font-weight: normal;
+    height: 40px;
+}
+.o-s-d-tbody li{
+    height: 40px;
+    line-height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .o-s-d-box2{
+    width: 950px;
+    height: 355px;
+    overflow: auto;
+} */
 /* 表格 */
-.o-s-d-table{
+/* .o-s-d-table{
     border: none;
     width: 100%;
     height: 100%;
@@ -121,4 +180,4 @@
 }
 .o-s-d-table tbody tr:hover{
     background-color: rgb(195, 236, 241);
-}
+} */

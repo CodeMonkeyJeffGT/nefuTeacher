@@ -131,149 +131,140 @@
 					<button class="o-s-up-close">关闭此页面</button>
 				</div>
 				<div class="operator-show-down">
-					<div class="o-s-d-box1">
-						<table class="o-s-d-table" cellspacing="0" cellpadding="0">
-							<thead>
-								<tr>
-									<th>学生</th>
-									<th>年级</th>
-									<th>专业</th>
-									<th>班级</th>
-									<th>开课学期</th>
-									<th>课程类别</th>
-									<th>课程名称</th>
-									<th>成绩</th>
-								</tr>
-							</thead>
-						</table>
+					<div class="o-s-d-thead">
+						<li>学号</li>
+						<li class="shortLi">姓名</li>
+						<li>开课学期</li>
+						<li>班级名称</li>
+						<li>课程名称</li>
+						<li>总成绩</li>
+						<li>课程性质</li>
+						<li class="shortLi">学分</li>
+						<li>考试性质</li>
 					</div>
-					<div class="o-s-d-box2">
-						<table class="o-s-d-table" cellspacing="0" cellpadding="0">
-							<tbody>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-								<tr>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-									<td>唯物</td>
-									<td>主义</td>
-								</tr>
-							</tbody>
-						</table>
+					<div class="o-s-d-tbody-container">
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li>2016-2017-01</li>
+							<li>计算机科学与技术2班</li>
+							<li>高等数学</li>
+							<li>88.88</li>
+							<li>学科基础课</li>
+							<li class="shortLi">4</li>
+							<li>鄙视</li>
+						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>

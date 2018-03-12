@@ -1,34 +1,131 @@
-.operator-show{
+.operator-show-up{
+    width: 100%;
+    height: 50px;
     position: relative;
 }
-.operator-show-container{
-    width: 800px;
-    height: 440px;
-    border: 1px solid powderblue;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 5%;
-    overflow: scroll;
+/* 加载信息 */
+.o-s-up-message{
+    line-height: 50px;
+    margin-left: 100px;
 }
-.operator-show-container::-webkit-scrollbar{
+/* 取消按钮 */
+.o-s-up-cancle{
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100px;
+    width: 120px;
+    height: 25px;
+    background-color:#e6a23c;
+    border: none;
+    text-align: center;
+    color: white;
+    letter-spacing: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #aaa;
+    font-weight: bold;
+    outline:none;
+    transition: all 0.5s ease-in-out;
+}
+.o-s-up-cancle::first-letter{
+    margin-left: 5px;
+}
+.o-s-up-cancle:hover{
+    transition: all 0.5s ease-in-out;
+    height: 35px;
+}
+/* 打印按钮 */
+.o-s-up-print{
+    /* display: none; */
+    position: absolute;
+    right: 280px;
+    width: 150px;
+    height: 25px;
+    background-color:  #45f1a1;
+    border-radius: 5px;
+    outline:none;
+    box-shadow: 0px 0px 3px #aaa;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+.o-s-up-print:hover{
+    transition: all 0.5s ease-in-out;
+    height: 35px;
+}
+/* 关闭按钮 */
+.o-s-up-close{
+    /* display: none; */
+    position: absolute;
+    right: 80px;
+    width: 150px;
+    height: 25px;
+    background-color:  #0084ff;
+    border-radius: 5px;
+    outline:none;
+    box-shadow: 0px 0px 3px #aaa;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+.o-s-up-close:hover{
+    transition: all 0.5s ease-in-out;
+    height: 35px;
+}
+
+.operator-show-down{
+    margin: 25px auto;
+    margin-top: 0;
+    width: 95%;
+    height: 405px;
+}
+.o-s-d-thead{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #909399;
+    font-size: 17px;
+    font-weight: bold;
+}
+.o-s-d-thead li{
+    display: block;
+    list-style: none;
+    float: left;
+    line-height: 50px;
+    width: 160px;
+    height: 50px;
+    overflow: auto;
+}
+.o-s-d-thead li::-webkit-scrollbar {
     display: none;
 }
-.o-s-c-table{
-    border-collapse: collapse;
+.o-s-d-thead .shortLi{
+    width: 80px;
 }
-.o-s-c-table tr{
-    border-bottom: 1px solid rgb(212, 205, 205);
+.o-s-d-thead li:nth-child(1){
+    margin-left: 19px;
 }
-.o-s-c-table th{
-    width: 200px;
-    height: 50px;    
-    border-bottom: 1px solid rgb(212, 205, 205);
-    padding: 0 20px;
+.o-s-d-tbody-container{
+    width: 100%;
+    height: 355px;
+    overflow: auto;
 }
-.o-s-c-table td{
-    width: 50px;
-    height: 50px;
-    border-bottom: 1px solid rgb(212, 205, 205);
-    padding: 0 20px;
+.o-s-d-tbody-container div:nth-child(3n){
+    background: #f6f6f6;  
+}
+.o-s-d-tbody{
+    font-size: 12px;
+    font-weight: normal;
+    height: 40px;
+}
+.o-s-d-tbody li{
+    height: 40px;
+    line-height: 40px;
 }

@@ -7,6 +7,19 @@ include ROOT . '/php/config.php';
 $class = ele($_GET, 'c', DEFAULT_CLASS);
 $class = ucfirst(strtolower($class));
 $function = ele($_GET, 'f', DEFAULT_FUNC);
+if ( ! is_file('log')) {
+	file_put_contents('log', '[]');
+}
+if ($class !== 'History') {
+	$log = json_decode(file_get_contents('log'), true);
+	$log[] = array(
+		'class' => $class,
+		'function' => $function,
+		'time' => time(),
+		'data' => $_POST,
+	);
+	file_put_contents('log', json_encode($log));
+}
 
 date_default_timezone_set('PRC');
 if($class == 'V')

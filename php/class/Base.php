@@ -89,7 +89,10 @@ class Base{
 		$urlinfo = parse_url($url);
 		$host = $urlinfo['host'];
 		$path = $urlinfo['path'];
+		var_dump($urlinfo);
 		$query = http_build_query($param);
+		var_dump($query);
+		die;
 		$port = 80;
 		$errno = 0;
 		$errstr = '';

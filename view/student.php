@@ -123,13 +123,114 @@
 			</div>
 			<!-- ---------------------------------------------------- -->
 			<div class="operator-show">
-				<div class="operator-show-container">
-					<table class="o-s-c-table" cellspacing="0" cellpadding="0">
-						<tr>
-							<th>姓名</th>
-							<td>王诚</td>
-						</tr>
-					</table>
+				<div class="operator-show-up">
+					<span class="o-s-up-message">正在为您加载...</span>
+					<button class="o-s-up-cancle">取消加载</button>
+					<button class="o-s-up-print">打印成绩单</button>
+					<button class="o-s-up-close">关闭此页面</button>
+				</div>
+				<div class="operator-show-down">
+					<div class="o-s-d-thead">
+						<li>学号</li>
+						<li class="shortLi">姓名</li>
+						<li class="shortLi">性别</li>
+						<li>专业名称</li>
+						<li>班级</li>
+						<li>当前所在级</li>
+						<li class="shortLi">政治面貌</li>
+					</div>
+					<div class="o-s-d-tbody-container">
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+						<div class="o-s-d-tbody o-s-d-thead">
+							<li>2016214111</li>
+							<li class="shortLi">小明</li>
+							<li class="shortLi">男</li>
+							<li>计算机科学与技术</li>
+							<li>计算机科学与技术02</li>
+							<li>2016</li>
+							<li class="shortLi">共青团员</li>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
