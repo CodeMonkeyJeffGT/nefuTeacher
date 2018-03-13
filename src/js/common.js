@@ -80,7 +80,7 @@ $(function(){
 function getDropdown(data = {}, level = 0)
 {
 	$.ajax({
-		"url": "?c=score&f=getDropdown",
+		"url": "/score/getDropdown",
 		"method": "post",
 		"data": data,
 		"dataType": 'json',
@@ -152,7 +152,7 @@ function loadHistory(type, loop = false, id = false){
 			"id": historyNow,
 		};
 		$.ajax({
-			"url": "?c=" + type + "&f=info",
+			"url": "/" + type + "/info",
 			"method": "post",
 			"data": data,
 			"dataType": 'json',
@@ -195,7 +195,7 @@ function loadHistory(type, loop = false, id = false){
 		"type": type
 	};
 	$.ajax({
-		"url": "?c=history",
+		"url": "/history",
 		"method": "post",
 		"data": data,
 		"dataType": "json",

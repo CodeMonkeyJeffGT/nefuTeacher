@@ -18,7 +18,7 @@ $(document).ready(function(){
 		$(".login-warning").text('登录中...');
 		$(".login-warning").css('color', 'gray');
 		$.ajax({
-			"url": '?c=user&f=login',
+			"url": '/user/login',
 			"method": 'post',
 			"data": data,
 			"dataType": 'json',

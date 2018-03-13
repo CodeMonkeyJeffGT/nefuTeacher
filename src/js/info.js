@@ -1,7 +1,7 @@
 $(function(){
 	$("#reload").on('click', function(){
 		$.ajax({
-			"url": "?c=user&f=reload",
+			"url": "/user/reload",
 			"method": "post",
 			"data": {'reload':true},
 			"dataType": 'json',
@@ -16,7 +16,7 @@ $(function(){
 	});
 	$("#logout").on('click', function(){
 		$.ajax({
-			"url": "?c=user&f=logout",
+			"url": "/user/logout",
 			"method": "post",
 			"data": {'logout':true},
 			"dataType": 'json',

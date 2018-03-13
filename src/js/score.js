@@ -32,7 +32,7 @@ $(function(){
 			title = '-本学院全部成绩-最好';
 		data.title = title.substr(1);
 		$.ajax({
-			"url": "?c=score&f=start",
+			"url": "/score/start",
 			"method": "post",
 			"data": data,
 			"dataType": "json",

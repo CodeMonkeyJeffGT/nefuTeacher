@@ -31,7 +31,7 @@ $(function(){
 			title = '-本学院所有学生';
 		data.title = title.substr(1);
 		$.ajax({
-			"url": "?c=student&f=start",
+			"url": "/student/start",
 			"method": "post",
 			"data": data,
 			"dataType": "json",
