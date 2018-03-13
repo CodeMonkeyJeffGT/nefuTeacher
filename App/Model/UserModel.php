@@ -30,6 +30,7 @@ class UserModel extends Model{
 			VALUES(' . (int)$account . ', ?, ?, ' . $college . ')
 		';
 		$this->query($sql, array($password, $name));
+		return $this->lastInsertId();
 	}
 
 	public function updatePass($id, $password) {

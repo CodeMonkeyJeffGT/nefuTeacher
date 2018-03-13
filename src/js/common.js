@@ -1,4 +1,3 @@
-var college = 0;
 var rec_grade = '';
 var rec_major = '';
 var historyNow = -1;
@@ -52,7 +51,6 @@ $(function(){
 				rec_grade = grade;
 				rec_major = '';
 				var data = {
-					'college': college,
 					'grade' : rec_grade,
 				}
 				getDropdown(data, 1);
@@ -67,7 +65,6 @@ $(function(){
 				}
 				rec_major = major;
 				var data = {
-					'college': college,
 					'grade' : rec_grade,
 					'major' : rec_major,
 				}
@@ -90,7 +87,6 @@ function getDropdown(data = {}, level = 0)
 			result = result.data;
 			if(0 == level)
 			{
-				college = result.college;
 				var grade = '';
 				for(var key in result.grade)
 				{
@@ -157,7 +153,6 @@ function loadHistory(type, loop = false, id = false){
 			"data": data,
 			"dataType": 'json',
 			"success": function(result){
-				console.log(result);
 				if(result.code == 1)
 				{
 					alert(result.message);
@@ -169,8 +164,9 @@ function loadHistory(type, loop = false, id = false){
 					return;
 				}
 				result = result.data;
-				var info = result.info.data;
-				var infoV = result.info.dataV;
+				console.log(result);
+				var info = result.data;
+				var infoV = result.dataV;
 				changeFlag = true;
 				$.each(info, function(key, value){
 					$('#control-' + key).val(value);
@@ -210,7 +206,7 @@ function loadHistory(type, loop = false, id = false){
 				window.location.reload();
 				return;
 			}
-			result = result.data;
+			result = result.data.list;
 			var str = JSON.stringify(result);
 			if(loop){
 				setTimeout(function(){loadHistory(type, true)}, 1000);
@@ -230,7 +226,7 @@ function loadHistory(type, loop = false, id = false){
 				{
 					tstr += ' history-selected';
 				}
-				tstr += '" value=' + result[i].id + '><div class="history-ele-title">' + result[i].title + '</div><span class="history-ele-time">' + result[i].time + '</span> <span class="history-ele-status h-e-s-' + (result[i].status == 0 ? 'done' : result[i].status == 1 ? 'doing' : 'fail') + '"></span></div>';
+				tstr += '" value=' + result[i].id + '><div class="history-ele-title">' + result[i].title + '</div><span class="history-ele-time">' + result[i].time + '</span> <span class="history-ele-status h-e-s-' + result[i].status + '"></span></div>';
 				str = tstr + str;
 			}
 			$('.history-content').html(str);

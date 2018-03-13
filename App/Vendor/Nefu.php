@@ -1,5 +1,5 @@
 <?php
-namespace FF\Vendor;
+namespace App\Vendor;
 
 class Nefu
 {

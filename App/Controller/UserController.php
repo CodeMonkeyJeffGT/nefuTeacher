@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Controller\BaseController;
-use FF\Vendor\Nefu;
+use App\Vendor\Nefu;
 
 class UserController extends BaseController{ 
 
@@ -33,9 +33,8 @@ class UserController extends BaseController{
 			if (false == $info) {
 				$this->error('学生请勿登录教师端系统');
 			} else {
-				$userDb->set($account, $password, $info['name'], $info['college']);
+				$id = $userDb->set($account, $password, $info['name'], $info['college']);
 			}
-			$id = $userDb->lastInsertId();
 		}
 		$user = $userDb->getById($id);
 		session('teacher.id', $user[0]['id']);

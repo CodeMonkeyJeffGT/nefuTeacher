@@ -24,6 +24,9 @@ class FF{
 			\FF\Core\Autoload::init();
 		}
 
+		//加载用户函数
+		ifile(APP . 'Vendor/functions.php');
+
 		list($controller, $action, $param) = Route::explain();
 		Config::set('CONTROLLER', $controller);
 		Config::set('ACTION', $action);

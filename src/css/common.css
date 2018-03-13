@@ -105,8 +105,8 @@ body{
 	overflow-y: auto;
 }
 .history-element{
-	width: 160px;
-	padding: 13px 15px;
+	width: 170px;
+	padding: 13px 10px;
 	overflow: hidden;
 	color: rgb(120, 120, 120);
 	cursor: pointer;
@@ -128,7 +128,7 @@ body{
 	font-size: 14px;
 }
 .history-ele-time{
-	font-size: 13px;
+	font-size: 12px;
 }
 .history-ele-status{
 	width: 0;

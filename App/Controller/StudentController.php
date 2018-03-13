@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Controller\BaseController;
-use FF\Vendor\Nefu;
+use App\Vendor\Nefu;
 
 class StudentController extends BaseController{ 
 

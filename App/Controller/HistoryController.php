@@ -10,9 +10,8 @@ class HistoryController extends BaseController{
 	{
 		$type = input('post.type', 'score');
 		$teacher = session('teacher.id');
-		$id = input('post.id', -1);
 		$db = model('task' . ucfirst($type));
-		$list = $db->list($teacher, $id);
+		$list = $db->list($teacher);
 		$this->success($list);
 	}
 

@@ -10,14 +10,11 @@ $(function(){
 			"lesson": $('#control-lesson').val(),
 			"student": $('#control-student').val(),
 			"showWay": $('#control-showWay').val(),
-			"college": college,
 			"gradeV": $('#control-grade').html(),
 			"majorV": $('#control-major').html(),
 			"classV": $('#control-class').html(),
 			"termV": $('#control-term').html(),
 			"typeV": $('#control-type').html(),
-			"lessonV": $('#control-lesson').val(),
-			"studentV": $('#control-student').val(),
 			"showWayV": $('#control-showWay').html(),
 		};
 		var title = (data.grade == '' ? '' : '-' + data.grade.substr(2, 2))
@@ -26,10 +23,12 @@ $(function(){
 			+ (data.term == '' ? '' : '-' + $('#control-term').html().substr(2, 2) + ($('#control-term').html().substr(10) == '1' ? '上' : '下'))
 			+ (data.type == '' ? '' : '-' + $('#control-type').html())
 			+ (data.lesson == '' ? '' : '-' + $('#control-lesson').val())
-			+ (data.student == '' ? '' : '-' + $('#control-student').val())
-			+ '-' + $('#control-showWay').html().substr(2, 2);
-		if(title == '-最好')
-			title = '-本学院全部成绩-最好';
+			+ (data.student == '' ? '' : '-' + $('#control-student').val());
+		console.log(data.grade == '' ? '' : '-' + data.grade.substr(2, 2))
+		console.log(title);
+		if(title == '')
+			title = '-本学院全部成绩';
+		title += '-' + $('#control-showWay').html().substr(2, 2);
 		data.title = title.substr(1);
 		$.ajax({
 			"url": "/score/start",
@@ -55,6 +54,5 @@ $(function(){
 			}
 		});
 	});
-	// -------------------------------------------------------
 	
 });

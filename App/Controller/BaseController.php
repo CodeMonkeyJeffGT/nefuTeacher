@@ -2,7 +2,7 @@
 namespace App\Controller;
 use FF\Core\Controller;
 use FF\Core\Config;
-use FF\Vendor\Nefu;
+use App\Vendor\Nefu;
 
 class BaseController extends Controller{
 
