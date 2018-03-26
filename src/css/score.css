@@ -3,6 +3,32 @@
     height: 50px;
     position: relative;
 }
+/* 复选框1 */
+.check{
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    width: 94px;
+    height: 21px;
+    background: url('../img/check.png') no-repeat ;
+    background-position: 72px 0px;
+    background-size: 21px 21px;
+}
+.checked{
+    background: url('../img/checked.png') no-repeat ;
+    background-position: 72px 0px;
+    background-size: 21px 21px;
+}
+input{
+    visibility: hidden;
+}
+.checkOne{
+    margin-left: 80px;
+}
+.checkTwo{
+    margin-left: 20px;
+}
 /* 加载信息 */
 .o-s-up-message{
     line-height: 50px;
@@ -100,7 +126,7 @@
     list-style: none;
     float: left;
     line-height: 50px;
-    width: 110px;
+    width: 170px;
     height: 50px;
     overflow: auto;
 }
@@ -108,7 +134,7 @@
     display: none;
 }
 .o-s-d-thead .shortLi{
-    width: 65px;
+    width: 130px;
 }
 .o-s-d-thead li:nth-child(1){
     margin-left: 19px;
@@ -131,53 +157,133 @@
     height: 40px;
     line-height: 40px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .o-s-d-box2{
-    width: 950px;
-    height: 355px;
-    overflow: auto;
-} */
-/* 表格 */
-/* .o-s-d-table{
-    border: none;
-    width: 100%;
-    height: 100%;
-    padding: 0 10px;
+.o-s-d-tbody span{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    transition: all 200 ease-in;
 }
-.o-s-d-table th{
+/* 小三角反转 */
+.o-s-d-tbody span.rotate_sanjiao{
+    transform-origin: center;
+    transform: rotateZ(-90deg);
+}
+.o-s-d-tbody span img{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+/* 下拉列表 */
+.o-s-d-tbody-slidedown{
+    list-style: none;
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    font-size: 14px;
+    background: #f6f6f6; 
+    display: none;
+}
+.o-s-d-tbody-slidedown li{
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    width: 150px;
+    overflow: auto;
+}
+.o-s-d-tbody-slidedown li::-webkit-scrollbar{
+    display: none;
+}
+.s-c-thead li:nth-child(1){
+    margin-left: 10px;
+}
+.o-s-d-tbody-slidedown li.s-c-shortLi{
+    width: 125px;
+}
+.o-s-d-tbody-slidedown .s-c-thead{
     border-bottom: 1px solid #909399;
-    height: 50px;
-    padding: 0;
-    text-align: left;
+    font-weight: bold;
+    height: 30px;
+    width: 100%;
     margin: 0 auto;
 }
-.o-s-d-table td{
+.o-s-d-tbody-slidedown-tbody-container{
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    /* background-color: rgba(227, 230, 228, 0.788); */
+    overflow: auto;
+}
+.o-s-d-tbody-slidedown-tbody-container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.s-c-tbody{
+    height: 30px;
+    width: 100%;
+    margin: 0 auto;
     border-bottom: 1px solid #909399;
-    height: 40px;
-    font-family: "Microsoft YaHei"
 }
-.o-s-d-table tr:nth-child(2n){
-    padding-top: 100px;  
+.s-c-tbody li:nth-child(1){
+    margin-left: 10px;
 }
-.o-s-d-table tr:nth-child(3n){
-    background: #f6f6f6;    
+/* 加权排名下拉 */
+.o-s-d-tbody-slidedown-1{
+    list-style: none;
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    font-size: 14px;
+    overflow: hidden;
+    display: none;
+    background: #f6f6f6; 
 }
-.o-s-d-table tbody tr:hover{
-    background-color: rgb(195, 236, 241);
-} */
+.o-s-d-tbody-slidedown-1 li{
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    width: 150px;
+    overflow: auto;
+}
+.o-s-1-thead{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #909399;
+}
+.o-s-1-thead li:nth-child(1){
+    margin-left: 10px;
+}
+.o-s-1-tbody{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #909399;
+}
+.o-s-1-tbody li:nth-child(1){
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

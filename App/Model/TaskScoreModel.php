@@ -4,7 +4,7 @@ use \FF\Core\Model;
 
 class TaskScoreModel extends Model{
 
-	public function list($teacher) {
+	public function lists($teacher) {
 		$sql = '
 			SELECT `t`.`id` `id`, `title`, `time`, `t`.`count` `count`, `s`.`count` `num`
 			FROM `task_score` `t`

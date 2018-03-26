@@ -5,6 +5,39 @@ var historyStore = '';
 var changeFlag = false;
 
 $(function(){
+	$('.checkOne').bind('click',function(){
+		$('.checkOne').toggleClass('checked');
+		
+	})
+	$('.checkTwo').bind('click',function(){
+		$('.checkTwo').toggleClass('checked');
+	})
+	$('.check').bind('click',function() {
+		$('#slidedown').removeClass('rotate_sanjiao');
+		$('.o-s-d-tbody-slidedown-1').slideUp(300);
+		$('.o-s-d-tbody-slidedown').slideUp(300);
+	})
+	$("#slidedown").bind('click',function(){
+		var slide = 0;
+		if( $('.checkOne').hasClass('checked') ){
+			slide = 1 ;
+		}
+		if( $('.checkTwo').hasClass('checked') ){
+			slide = 2 ;
+		}
+		if( ( $('.checkOne').hasClass('checked') )&&( $('.checkTwo').hasClass('checked') ) ){
+			slide = 3;
+		}
+		$('#slidedown').toggleClass('rotate_sanjiao');
+		if( slide == 1 ){
+			$('.o-s-d-tbody-slidedown-1').slideToggle(300);
+		}else if(slide == 2){
+			$('.o-s-d-tbody-slidedown').slideToggle(300);
+		}else if( slide ==3 ){
+			$('.o-s-d-tbody-slidedown-1').slideToggle(300);
+			$('.o-s-d-tbody-slidedown').slideToggle(300);
+		}
+	})
 	try{
 		loadHistory(type, true);
 	}

@@ -4,7 +4,7 @@ use \FF\Core\Model;
 
 class TaskStudentModel extends Model{
 
-	public function list($teacher, $id = -1) {
+	public function lists($teacher, $id = -1) {
 	}
 
 	public function get($id) {

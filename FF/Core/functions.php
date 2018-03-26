@@ -1,6 +1,6 @@
 <?php
 
-function ele(array $array, string $element, $default = null, $hard = true) {
+function ele(array $array, $element, $default = null, $hard = true) {
 	if ($hard) {
 		if (isset($array[$element])) {
 			return $array[$element];
@@ -46,7 +46,7 @@ function p($value, $var = true) {
 	echo '</pre>';
 }
 
-function input(string $name = '', $default = null) {
+function input($name = null, $default = null) {
 	$input = array();
 	$name = explode('.', $name);
 	switch (strtolower($name[0])) {
@@ -88,7 +88,7 @@ function input(string $name = '', $default = null) {
 	}
 }
 
-function session(string $name = '.', $value = null) {
+function session($name = null, $value = null) {
 	if ($name === '.') {
 		return $_SESSION;
 	} else {
@@ -117,7 +117,7 @@ function session(string $name = '.', $value = null) {
 	}
 }
 
-function cookie(string $name, $value = null, $config = array()) {
+function cookie($name, $value = null, $config = array()) {
 	if ($name === '.') {
 		return $_COOKIE;
 	} else {
