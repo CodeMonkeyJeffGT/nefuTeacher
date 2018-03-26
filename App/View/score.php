@@ -121,6 +121,7 @@
 						<li class="shortLi">加权</li>
 						<li class="shortLi">加权(不含通识)</li>
 						<li class="shortLi">排名</li>
+						<span>点击展开</span>
 					</div>
 					<div class="o-s-d-tbody-container">
 						<div class="o-s-d-tbody o-s-d-thead">

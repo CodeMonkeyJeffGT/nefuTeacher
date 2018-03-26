@@ -7,15 +7,23 @@ var changeFlag = false;
 $(function(){
 	$('.checkOne').bind('click',function(){
 		$('.checkOne').toggleClass('checked');
-		
+		if($('#slidedown').hasClass('rotate_sanjiao')){
+			if($('.checkOne').hasClass('checked')){
+				$('.o-s-d-tbody-slidedown-1').slideDown(300);
+			}else{
+				$('.o-s-d-tbody-slidedown-1').slideUp(300);
+			}
+		}
 	})
 	$('.checkTwo').bind('click',function(){
 		$('.checkTwo').toggleClass('checked');
-	})
-	$('.check').bind('click',function() {
-		$('#slidedown').removeClass('rotate_sanjiao');
-		$('.o-s-d-tbody-slidedown-1').slideUp(300);
-		$('.o-s-d-tbody-slidedown').slideUp(300);
+		if($('#slidedown').hasClass('rotate_sanjiao')){
+			if($('.checkTwo').hasClass('checked')){
+				$('.o-s-d-tbody-slidedown').slideDown(300);
+			}else{
+				$('.o-s-d-tbody-slidedown').slideUp(300);
+			}
+		}
 	})
 	$("#slidedown").bind('click',function(){
 		var slide = 0;
