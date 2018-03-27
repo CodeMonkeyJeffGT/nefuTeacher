@@ -20,7 +20,7 @@
     background-position: 72px 0px;
     background-size: 21px 21px;
 }
-input{
+input.choose_xiala{
     visibility: hidden;
 }
 .checkOne{
@@ -220,7 +220,7 @@ input{
     width: 100%;
     height: auto;
     max-height: 260px;
-    /* background-color: rgba(227, 230, 228, 0.788); */
+    background-color: rgba(227, 230, 228, 0.788);
     overflow: auto;
 }
 .o-s-d-tbody-slidedown-tbody-container::after{

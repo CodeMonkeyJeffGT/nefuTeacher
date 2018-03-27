@@ -7,25 +7,41 @@ var changeFlag = false;
 $(function(){
 	$('.checkOne').bind('click',function(){
 		$('.checkOne').toggleClass('checked');
-		if($('#slidedown').hasClass('rotate_sanjiao')){
-			if($('.checkOne').hasClass('checked')){
-				$('.o-s-d-tbody-slidedown-1').slideDown(300);
-			}else{
-				$('.o-s-d-tbody-slidedown-1').slideUp(300);
-			}
+		if($('.checkOne').hasClass('checked')){
+			$('.slidedown').each(function(){
+				if( $(this).hasClass('rotate_sanjiao') ){
+					$(this).parent().next().slideDown(300);
+					// return false;
+				}
+			})
+		}else{
+			$('.slidedown').each(function(){
+				if( $(this).hasClass('rotate_sanjiao') ){
+					$(this).parent().next().slideUp(300);
+					// return false;
+				}
+			})
 		}
 	})
 	$('.checkTwo').bind('click',function(){
 		$('.checkTwo').toggleClass('checked');
-		if($('#slidedown').hasClass('rotate_sanjiao')){
-			if($('.checkTwo').hasClass('checked')){
-				$('.o-s-d-tbody-slidedown').slideDown(300);
-			}else{
-				$('.o-s-d-tbody-slidedown').slideUp(300);
-			}
+		if($('.checkTwo').hasClass('checked')){
+			$('.slidedown').each(function(){
+				if( $(this).hasClass('rotate_sanjiao') ){
+					$(this).parent().next().next().slideDown(300);
+					// return false;
+				}
+			})
+		}else{
+			$('.slidedown').each(function(){
+				if( $(this).hasClass('rotate_sanjiao') ){
+					$(this).parent().next().next().slideUp(300);
+					// return false;
+				}
+			})
 		}
 	})
-	$("#slidedown").bind('click',function(){
+	$(".slidedown").bind('click',function(){
 		var slide = 0;
 		if( $('.checkOne').hasClass('checked') ){
 			slide = 1 ;
@@ -36,14 +52,14 @@ $(function(){
 		if( ( $('.checkOne').hasClass('checked') )&&( $('.checkTwo').hasClass('checked') ) ){
 			slide = 3;
 		}
-		$('#slidedown').toggleClass('rotate_sanjiao');
+		$(this).toggleClass('rotate_sanjiao');
 		if( slide == 1 ){
-			$('.o-s-d-tbody-slidedown-1').slideToggle(300);
+			$(this).parent().next().slideToggle(300);
 		}else if(slide == 2){
-			$('.o-s-d-tbody-slidedown').slideToggle(300);
-		}else if( slide ==3 ){
-			$('.o-s-d-tbody-slidedown-1').slideToggle(300);
-			$('.o-s-d-tbody-slidedown').slideToggle(300);
+			$(this).parent().next().next().slideToggle(300);
+		}else if( slide == 3 ){
+			$(this).parent().next().slideToggle(300);
+			$(this).parent().next().next().slideToggle(300);
 		}
 	})
 	try{

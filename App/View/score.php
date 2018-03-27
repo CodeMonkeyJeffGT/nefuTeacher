@@ -107,8 +107,8 @@
 			<!-- --------------------------------------------------------- -->
 				<div class="operator-show-up">
 					<span class="o-s-up-message">正在为您加载...</span>
-					<label for="checkOne" class="check checkOne checked">加权/排名</label><input type="checkbox" name="" id="checkOne">
-					<label for="checkTwo" class="check checkTwo checked">&nbsp;详细成绩</label><input type="checkbox" name="" id="checkTwo">
+					<label for="checkOne" class="check checkOne checked">加权/排名</label><input class="choose_xiala" type="checkbox" name="" id="checkOne">
+					<label for="checkTwo" class="check checkTwo checked">&nbsp;详细成绩</label><input class="choose_xiala" type="checkbox" name="" id="checkTwo">
 					<button class="o-s-up-cancle">取消加载</button>
 					<button class="o-s-up-print">导出Excel</button>
 					<button class="o-s-up-close">删除此记录</button>
@@ -131,7 +131,7 @@
 							<li class="shortLi">{{90}}</li>
 							<li class="shortLi">{{88.88}}</li>
 							<li class="shortLi">{{1}}</li>
-							<span id="slidedown"><img src="../../src/img/sanjiao.png" alt="" class="rotate_sanjiao"></span>
+							<span class="slidedown"><img src="../../src/img/sanjiao.png" alt=""></span>
 						</div>
 						<div class="o-s-d-tbody-slidedown-1">
 							<div class="o-s-1-thead">
@@ -167,8 +167,8 @@
 									<li class="s-c-shortLi">{{4}}</li>
 									<li>{{正常考试}}</li>	
 								</div>
-							</div>
-						</div>	
+							</div>	
+						</div>
 					</div>
 				</div>
 			</div>
